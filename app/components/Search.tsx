@@ -42,9 +42,9 @@ const Search = () => {
   };
 
   return (
-    <div>
+    <div className="w-full flex flex-col  xl:items-center">
       <form onSubmit={(e) => searchTask(e)}>
-        <div className="z-[999] w-[700px] h-[60px] rounded-[50px] bg-white flex px-6 justify-between items-center  ">
+        <div className="z-[999] xl:w-[700px] w-full h-[60px] rounded-[50px] bg-white flex px-6 justify-between items-center  ">
           <input
             className="outline-none bg-transparent w-full h-full px-4"
             type="text"
