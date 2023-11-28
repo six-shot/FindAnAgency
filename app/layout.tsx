@@ -1,8 +1,14 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Nunito,Playfair_Display } from 'next/font/google'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const nunito = Nunito({ subsets: ['latin'],
+weight:["200","300","400","500","600","700","800","900"],
+variable:'--font-nunito' })
+
+const play_fair = Playfair_Display({ subsets: ['latin'],
+weight:["400","500","600","700","800","900"],
+variable:'--font-play_fair' })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${nunito.variable,play_fair.variable}`}>{children}</body>
     </html>
   )
 }
