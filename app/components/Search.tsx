@@ -1,5 +1,4 @@
 "use client"
-
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { IoSearch } from "react-icons/io5";
@@ -32,19 +31,26 @@ const Search = () => {
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const searchTerm = e.target.value;
     setInput(searchTerm);
-    debouncedSearch(searchTerm);
+
+    if (searchTerm === "") {
+      // If input is empty, hide the search results section
+      setTasks([]);
+    } else {
+      // If input is not empty, trigger the debounced search
+      debouncedSearch(searchTerm);
+    }
   };
 
   const searchTask = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     router.push(`?task=${input}`);
-    // Remove the debouncedSearch call from here
+    
   };
 
   return (
-    <div className="w-full flex flex-col  xl:items-center">
+    <div className="relative xl:flex flex-col xl:items-center">
       <form onSubmit={(e) => searchTask(e)}>
-        <div className="z-[999] xl:w-[700px] w-full h-[60px] rounded-[50px] bg-white flex px-6 justify-between items-center  ">
+        <div className="z-[999] xl:w-[700px] w-full h-[60px] rounded-[50px] bg-white flex px-6 justify-between items-center">
           <input
             className="outline-none bg-transparent w-full h-full px-4"
             type="text"
@@ -63,15 +69,19 @@ const Search = () => {
         </div>
       </form>
 
-      {!isLoading && tasks.length === 0 && <p>No results found. Use client.</p>}
+      {!isLoading && tasks.length === 0 && input.trim() !== "" && (
+        <p>No results found. Use client.</p>
+      )}
 
-      <div className="grid sm:grid-cols-2 sm:gap-10 gap-5 grid-col-1">
-        {tasks.map((task) => (
-          <div className="" key={task.id}>
-            <h5>{task.name}</h5>
-          </div>
-        ))}
-      </div>
+      {tasks.length > 0 && (
+        <div className="z-[999] xl:w-[700px] w-full py-6 mt-3 bg-white flex px-6 justify-between items-center">
+          {tasks.map((task) => (
+            <div className="" key={task.id}>
+              <h5>{task.name}</h5>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
