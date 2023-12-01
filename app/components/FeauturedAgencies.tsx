@@ -6,7 +6,7 @@ import { Button } from "./buttons/Button";
 
 
 
-export default function FeaturedAgencies({ todos }: { todos: Task[] }) {
+export default function FeaturedAgencies() {
   const [agency, setAgency] = useState<Task[]>([]);
 
   useEffect(() => {

@@ -9,14 +9,14 @@ import AddAgency from "./components/AddAgency";
 interface HomeProps {
   todos: Task[];
 }
-export default function Home({todos}:HomeProps) {
+export default function Home() {
   return (
     <main className="">
       <Hero />
       <div className="mt-20 ">
         <MyTabs />
       </div>
-      <FeauturedAgencies todos={todos} />
+      <FeauturedAgencies  />
       <Ranking />
       <AddAgency />
     </main>
