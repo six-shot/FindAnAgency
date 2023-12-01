@@ -4,6 +4,8 @@ import axios from "axios";
 import { IoClose, IoSearch } from "react-icons/io5";
 import debounce from "lodash/debounce"; // Import the debounce function
 import { useRouter } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
 
 const Search = () => {
   const [input, setInput] = useState("");
@@ -67,7 +69,7 @@ const Search = () => {
               ) : (
                 <>
                   {tasks.length > 0 ? (
-                    <IoClose className="text-[25px]"  onClick={closeResults} />
+                    <IoClose className="text-[25px]" onClick={closeResults} />
                   ) : (
                     <IoSearch className="text-[25px]" />
                   )}
@@ -78,21 +80,29 @@ const Search = () => {
         </div>
       </form>
 
-      {!isLoading && tasks.length === 0 && input.trim() !== "" && (
-        <p></p>
-      )}
+      {!isLoading && tasks.length === 0 && input.trim() !== "" && <p></p>}
 
       {tasks.length > 0 && (
         <div className="z-[999] xl:w-[700px] w-full py-2 mt-3 bg-white rounded flex flex-col gap-3 px-6 justify-between ">
           {tasks.map((task) => (
-            <div className="flex items-center gap-2" key={task.id}>
-              <div className="w-[100px] h-[60px]"></div>
-              <div className="">
-                {" "}
-                <h5 className="text-sm text-blue-700 font-medium font-nunito">{task.name}</h5>
-                <p className="text-sm -mt-1">{task.about}</p>
+            <Link href={`/agency/${task.id}`}>
+              <div className="flex items-center gap-2" key={task.id}>
+                <div className="w-[300px] h-[60px]">
+                  <Image
+                    src={task.logoURL}
+                    alt="logo"
+                    width={300}
+                    height={60}
+                  />
+                </div>
+                <div className="">
+                  <h5 className="text-sm text-blue-700 font-medium font-nunito">
+                    {task.name}
+                  </h5>
+                  <p className="text-sm -mt-1">{task.about}</p>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       )}

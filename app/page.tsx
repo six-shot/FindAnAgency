@@ -6,17 +6,19 @@ import MyTabs from "./components/Tab";
 import FeauturedAgencies from "./components/FeauturedAgencies";
 import Ranking from "./components/Ranking";
 import AddAgency from "./components/AddAgency";
-
-export default function Home() {
+interface HomeProps {
+  todos: Task[];
+}
+export default function Home({todos}:HomeProps) {
   return (
     <main className="">
       <Hero />
       <div className="mt-20 ">
         <MyTabs />
       </div>
-      <FeauturedAgencies/>
-      <Ranking/>
-      <AddAgency/>
+      <FeauturedAgencies todos={todos} />
+      <Ranking />
+      <AddAgency />
     </main>
   );
 }

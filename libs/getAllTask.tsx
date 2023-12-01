@@ -1,7 +1,11 @@
 
 
 export default async function getAllTasks() {
-  const res = await fetch("https://gind-agencies.onrender.com/api/agency");
+  const res = await fetch("https://gind-agencies.onrender.com/api/agency",{
+    next:{
+      revalidate:0
+    }
+  });
 
   if (!res.ok) throw new Error("failed to fetch data");
 

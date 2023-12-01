@@ -10,8 +10,8 @@ export default function Page() {
     phone_number: "",
     website: "",
     location: "",
-    feautured: false,
-    profileImage: null as File | null, 
+    featured: "",
+    logo: null as File | null,
   });
   const [busy, setBusy] = useState(false);
 
@@ -23,21 +23,18 @@ export default function Page() {
     website,
     phone_number,
     location,
-    feautured,
-    profileImage,
+    featured,
+    logo,
   } = userInfo;
 
   const handleFileChange: ChangeEventHandler<HTMLInputElement> = (e) => {
     const file = e.target.files?.[0];
 
     if (file) {
-      setUserInfo({ ...userInfo, profileImage: file });
+      setUserInfo({ ...userInfo, logo: file });
     }
   };
-    const handleCheckboxChange: ChangeEventHandler<HTMLInputElement> = (e) => {
-      const checked = e.target.checked;
-      setUserInfo({ ...userInfo, feautured: checked });
-    };
+    
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     setBusy(true);
@@ -49,15 +46,15 @@ export default function Page() {
     formData.append("services", services);
     formData.append("about", about);
     formData.append("website", website);
-    formData.append("phonenumber", phone_number);
+    formData.append("phone_number", phone_number);
     formData.append("location", location);
-    formData.append("agreeToTerms", String(feautured));
-    if (profileImage !== null) {
-      formData.append("profileImage", profileImage);
+    formData.append("featured", featured);
+    if (logo !== null) {
+      formData.append("logo", logo);
     }
 
     const res = await fetch(
-      "https://gind-agencies.onrender.com/api/create_agencies",
+      "https://gind-agencies.onrender.com/api/create",
       {
         method: "POST",
         body: formData,
@@ -69,7 +66,7 @@ export default function Page() {
   };
 
   return (
-    <div>
+    <div className="pt-40">
       <form onSubmit={handleSubmit}>
         <div className="sm:mb-6 mb-4">
           <label className="mb-2 text-base">
@@ -163,17 +160,23 @@ export default function Page() {
           />
         </div>
         <div className="sm:mb-6 mb-4">
-          <label className="mb-2 text-base">Agree to Terms</label>
+          <label className="mb-2 text-base">
+            Featured<sup>*</sup>
+          </label>
           <input
-            type="checkbox"
-            checked={feautured}
-            onChange={handleCheckboxChange}
-            className="mt-2"
+            className="sm:h-[48px] h-[42px] pl-2 outline-none w-[100%]  border-[1px] border-[#000000] rounded-lg"
+            type="text"
+            value={featured}
+            onChange={({ target }) =>
+              setUserInfo({ ...userInfo, featured: target.value })
+            }
           />
         </div>
+      
+      
 
         <div className="sm:mb-6 mb-4">
-          <label className="mb-2 text-base">Profile Image</label>
+          <label className="mb-2 text-base">Logo</label>
           <input
             type="file"
             accept="image/*"
@@ -185,14 +188,12 @@ export default function Page() {
         <div className="">
           <button
             className="w-[100%] text-lg h-[48px] bg-[#181818] text-white rounded mb-4"
-            disabled={busy || !feautured} 
+            disabled={busy || !featured}
             style={{ opacity: busy ? 0.5 : 1 }}
           >
             Sign Up
           </button>
         </div>
-
-      
       </form>
     </div>
   );
