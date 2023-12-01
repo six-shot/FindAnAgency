@@ -10,7 +10,8 @@ const config: Config = {
     extend: {
       fontFamily:{
         nunito:['var(--font-nunito)'],
-        play_fair:['var(--font-play_fair)']
+        play_fair:['var(--font-play_fair)'],
+        poppins:['var(--font-poppins)']
       },
     },
   },

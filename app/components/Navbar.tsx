@@ -20,16 +20,16 @@ export default function Navbar() {
       <header
         className={
           navbar
-            ? "bg-white w-full flex justify-between items-center fixed top-0 xl:px-14 px-5 h-[60px] sm:h-[80px]"
-            : "bg-white w-full flex justify-between items-center fixed top-0 xl:px-14 px-5 h-[60px] sm:h-[80px]"
+            ? "bg-white w-full flex justify-between items-center fixed top-0 xl:px-14 z-[999]  px-5 h-[60px] sm:h-[80px]  "
+            : "bg-white w-full flex justify-between items-center fixed top-0 xl:px-14 z-[999]   px-5 h-[60px] sm:h-[80px]  "
         }
       >
         <Image src={logo} className="xl:w-[200px] w-[180px]" alt="logo" />
 
         <nav className="sm:flex hidden">
-          <ul className="flex gap-5 font-nunito text-[#999999] ">
-            <li>Home</li>
-            <li>Search By Industry</li>
+          <ul className="flex gap-5  text-[#999999] ">
+            <li className="font-nunito">Home</li>
+            <li className="font-nunito">Search By Industry</li>
             <li>Search By Location</li>
             <li>Blog</li>
             <li>Contact</li>

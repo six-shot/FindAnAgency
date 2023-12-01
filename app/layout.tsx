@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Nunito,Playfair_Display } from 'next/font/google'
+import { Nunito,Playfair_Display,Poppins } from 'next/font/google'
 import './globals.css'
 
 const nunito = Nunito({ subsets: ['latin'],
@@ -7,6 +7,10 @@ weight:["200","300","400","500","600","700","800","900"],
 variable:'--font-nunito' })
 
 const play_fair = Playfair_Display({ subsets: ['latin'],
+weight:["400","500","600","700","800","900"],
+variable:'--font-play_fair' })
+
+const poppins = Poppins({ subsets: ['latin'],
 weight:["400","500","600","700","800","900"],
 variable:'--font-play_fair' })
 
@@ -22,7 +26,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${nunito.variable,play_fair.variable}`}>{children}</body>
+      <body className={`${nunito.variable}`}>{children}</body>
     </html>
   )
 }

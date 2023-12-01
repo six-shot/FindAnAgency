@@ -1,7 +1,7 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { IoSearch } from "react-icons/io5";
+import { IoClose, IoSearch } from "react-icons/io5";
 import debounce from "lodash/debounce"; // Import the debounce function
 import { useRouter } from "next/navigation";
 
@@ -44,11 +44,14 @@ const Search = () => {
   const searchTask = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     router.push(`?task=${input}`);
-    
+  };
+  const closeResults = () => {
+    setTasks([]);
+    setInput(""); 
   };
 
   return (
-    <div className="relative xl:flex flex-col xl:items-center">
+    <div className="relative w-full xl:flex flex-col xl:items-center">
       <form onSubmit={(e) => searchTask(e)}>
         <div className="z-[999] xl:w-[700px] w-full h-[60px] rounded-[50px] bg-white flex px-6 justify-between items-center">
           <input
@@ -62,7 +65,13 @@ const Search = () => {
               {isLoading ? (
                 <span className="loader"></span>
               ) : (
-                <IoSearch className="text-[25px]" />
+                <>
+                  {tasks.length > 0 ? (
+                    <IoClose className="text-[25px]"  onClick={closeResults} />
+                  ) : (
+                    <IoSearch className="text-[25px]" />
+                  )}
+                </>
               )}
             </div>
           </div>
@@ -70,14 +79,19 @@ const Search = () => {
       </form>
 
       {!isLoading && tasks.length === 0 && input.trim() !== "" && (
-        <p>No results found. Use client.</p>
+        <p></p>
       )}
 
       {tasks.length > 0 && (
-        <div className="z-[999] xl:w-[700px] w-full py-6 mt-3 bg-white flex px-6 justify-between items-center">
+        <div className="z-[999] xl:w-[700px] w-full py-2 mt-3 bg-white rounded flex flex-col gap-3 px-6 justify-between ">
           {tasks.map((task) => (
-            <div className="" key={task.id}>
-              <h5>{task.name}</h5>
+            <div className="flex items-center gap-2" key={task.id}>
+              <div className="w-[100px] h-[60px]"></div>
+              <div className="">
+                {" "}
+                <h5 className="text-sm text-blue-700 font-medium font-nunito">{task.name}</h5>
+                <p className="text-sm -mt-1">{task.about}</p>
+              </div>
             </div>
           ))}
         </div>

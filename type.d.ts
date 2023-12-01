@@ -1,6 +1,7 @@
+
+
 type Task = {
   id: number;
-  logoURL: string;
-  name: string;
-  
+  name:string;
+logo:string;
 };
