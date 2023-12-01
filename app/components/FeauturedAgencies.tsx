@@ -32,7 +32,7 @@ export default function FeaturedAgencies({ todos }: { todos: Task[] }) {
             {agency.length > 0 && (
               <div className="grid grid-cols-3 space-y-10 space-x-5">
                 {agency.map((task) => (
-                  <div className="bg-[#e1e4f7] hover:bg-[#ffffff34] p-3  rounded-sm">
+                  <div className="bg-[#e1e4f7] hover:bg-[#ffffff34] p-3  rounded-sm" key={task.id}>
                     <div className="w-[250px] h-[100px] bg-[#e1e4f7] shadow-2xl">
                       <Image
                         src={task.data.logoURL}

@@ -80,7 +80,7 @@ const Search = () => {
         </div>
       </form>
 
-      {!isLoading && tasks.length === 0 && input.trim() !== "" && <p></p>}
+      {!isLoading && tasks.length === 0 && input.trim() !== "" && <p key={tasks.id}></p>}
 
       {tasks.length > 0 && (
         <div className="z-[999] xl:w-[700px] w-full py-2 mt-3 bg-white rounded flex flex-col gap-3 px-6 justify-between ">
