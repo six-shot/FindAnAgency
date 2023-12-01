@@ -80,13 +80,13 @@ const Search = () => {
         </div>
       </form>
 
-      {!isLoading && tasks.length === 0 && input.trim() !== "" &&  '' }
+      {!isLoading && tasks.length === 0 && input.trim() !== "" && ""}
 
       {tasks.length > 0 && (
         <div className="z-[999] xl:w-[700px] w-full py-2 mt-3 bg-white rounded flex flex-col gap-3 px-6 justify-between ">
           {tasks.map((task) => (
-            <Link href={`/agency/${task.id}`}>
-              <div className="flex items-center gap-2" key={task.id}>
+            <Link href={`/agency/${task.id}`} key={task.id}>
+              <div className="flex items-center gap-2">
                 <div className="w-[300px] h-[60px]">
                   <Image
                     src={task.logoURL}
