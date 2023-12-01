@@ -19,9 +19,9 @@ export default async function TasksPage() {
       {tasks.length > 0 && (
         <div className="z-[999] ">
           {tasks.map((task) => (
-            <Link href={`/agency/${task.id}`}>
+            <Link href={`/agency/${task.id}`} key={task.id}>
               {task.data.name}
-              <div className="flex items-center gap-2" key={task.id}>
+              <div className="flex items-center gap-2">
                 <div className="">
                   <h5 className="text-sm text-blue-700 font-medium font-nunito">
                     {task.data.name}
