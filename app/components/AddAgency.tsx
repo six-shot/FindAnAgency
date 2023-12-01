@@ -11,7 +11,7 @@ export default function AddAgency() {
         <h1 className="font-bold text-[32px] text-[#302f2fc7] pb-8">
           Want To List Your Agency?
         </h1>
-        <Link href="/createlisting">
+        <Link href="/addagency">
           <Button variant="primary">Create a Listing</Button>
         </Link>
       </div>
