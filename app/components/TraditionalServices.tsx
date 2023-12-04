@@ -8,8 +8,8 @@ export default function TraditionalServices() {
   return (
     <div>
       <div>
-        <div className="grid grid-cols-4 px-14 2xl:px-0 max-w-[1440px] mx-auto">
-          <div className="flex justify-center items-center flex-col font-nunito">
+        <div className="grid sm:grid-cols-4 w-full grid-cols-1 px-14 2xl:px-0 max-w-[1440px] mx-auto">
+          <div className="flex  items-center flex-col font-nunito">
             <Image src={pr} alt="social" />
             <h4 className="font-semibold">Public Relation</h4>
             <div className="flex gap-2 items-center mt-3">

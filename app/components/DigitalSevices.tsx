@@ -6,7 +6,7 @@ import { CiCircleChevRight } from "react-icons/ci";
 export default function DigitalSevices() {
   return (
     <div>
-      <div className="grid grid-cols-3 px-14 2xl:px-0 max-w-[1440px] mx-auto">
+      <div className="grid sm:grid-cols-3 grid-cols-1 px-14 2xl:px-0 max-w-[1440px] mx-auto">
         <div className="flex justify-center items-center flex-col font-nunito">
           <Image src={social} alt="social" />
           <h4 className="font-semibold">Social Media Marketing</h4>

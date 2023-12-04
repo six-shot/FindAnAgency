@@ -18,7 +18,7 @@ export default function Ranking() {
             <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
           </div>
 
-          <div className="  flex w-full h-full justify-center flex-col items-start px-20 z-10 ">
+          <div className="  flex w-full h-full justify-center flex-col items-start sm:px-20 px-4 z-10 ">
             <h5 className=" font-bold  ">Agency Ranking</h5>
             <h3 className="text-[34px] z-50 leading-[34px] font-bold mt-5">
               Top 10 Digital Marketing <br /> Agencies In Nigeria (2020)

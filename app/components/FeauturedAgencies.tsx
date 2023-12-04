@@ -25,7 +25,7 @@ export default function FeaturedAgencies() {
     <div className="bg-[#e1e4f7] py-20 mt-20">
       <div className="max-w-[1440px] mx-auto  ">
         <div className="flex justify-center items-center flex-col gap-10">
-          <h2 className="text-[#444444c7] font-bold font-poppins text-[27px] text-center">
+          <h2 className="text-[#444444c7] font-bold font-poppins text-[27px] text-center px-4">
             Featured Agencies In Nigeria
           </h2>
 
