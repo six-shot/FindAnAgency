@@ -10,7 +10,7 @@ export default function Navbar() {
 
   return (
     <div className="flex max-w-[1440px] mx-auto   ">
-      <header className="flex w-full justify-between items-center py-6 border-b border-gray-300  ">
+      <header className="flex w-full justify-between items-center py-6 border-b px-5 border-gray-300  ">
         {" "}
         <Link href="/">
           <Image src={logo} className="xl:w-[200px] w-[180px]" alt="logo" />
