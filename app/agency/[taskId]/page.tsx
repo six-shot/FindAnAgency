@@ -43,7 +43,7 @@ export default function UserPage({ params: { taskId } }: Params) {
   return (
     <>
       <div className="max-w-[1440px] mx-auto">
-        {task?(<><h2 className="text-[60px] border-b-[1px] border-black">{task.name}</h2>
+        {task?(<><h2 className="xl:text-[60px] text-[30px] border-b-[1px] border-black">{task.name}</h2>
         <div>
           <div className="flex flex-row items-center gap-5 mt-10">
             <div className="relative w-[150px] h-[100px]">

@@ -27,7 +27,7 @@ export default function FeaturedAgencies() {
           <h2 className="text-[#444444c7] font-bold font-poppins text-[27px] text-center px-4">
             Featured Agencies In Nigeria
           </h2>
-          <div className="grid grid-cols-3 space-y-10 space-x-5">
+          <div className="grid sm:grid-cols-3 grid-cols-1 w-full space-y-10 space-x-5">
             {navLinks.map((navLink) => {
               return (
                 <Link href={`/agency/${navLink.id}`} key={navLink.id}>
