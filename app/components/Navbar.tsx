@@ -10,6 +10,7 @@ export default function Navbar() {
   const [navbar, setNavbar] = useState(false);
 
   const [isOpen, setIsOpen] = useState(false);
+    const [isOpenDrop, setIsOpenDrop] = useState(false);
   return (
     <div className="flex max-w-[1440px] mx-auto   ">
       <header className="flex w-full justify-between items-center py-6 border-b px-5 border-gray-300  ">
@@ -20,14 +21,45 @@ export default function Navbar() {
         <nav className="sm:flex hidden">
           <ul className="flex gap-5  text-[#999999] ">
             <li className="font-nunito">Home</li>
-            <li className="font-nunito">Search By Industry</li>
+           
 
+            <div className="relative">
+              <div
+                className="flex items-center gap-1   "
+                onClick={() => setIsOpenDrop((prev) => !prev)}
+              >
+                <h6 className="cursor-pointer">Search By Industry</h6>
+                {!isOpenDrop ? (
+                  <PiIcons.PiCaretDownBold />
+                ) : (
+                  <PiIcons.PiCaretUpBold />
+                )}
+              </div>
+              {isOpenDrop && (
+                <div className="absolute bg-white shadow-[0_4px_6px_-2px_rgba(0,0,0,0.3)] rounded-[4px] top-10 z-10 flex col items-start p-5  ">
+                  <div className="flex flex-col w-[200px] ">
+                    <div
+                      className="flex  flex-col "
+                      onClick={() => setIsOpen((prev) => !prev)}
+                    >
+                      <h6 className="  hover:bg-blue-400 hover:text-white cursor-pointer border-l-transparent hover:border-l-white border-l-4 p-[1px]  w-[200px]">
+                    Digital Agencies
+                      </h6>
+                      <h6 className="hover:bg-blue-400 cursor-pointer hover:text-white border-l-transparent hover:border-l-white border-l-4 p-[1px]  w-[200px]">
+                      Traditional Agencies
+                      </h6>
+                      
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
             <div className="relative">
               <div
                 className="flex items-center gap-1   "
                 onClick={() => setIsOpen((prev) => !prev)}
               >
-                <h6 className="cursor-pointer">Resources</h6>
+                <h6 className="cursor-pointer">Search By Location</h6>
                 {!isOpen ? (
                   <PiIcons.PiCaretDownBold />
                 ) : (
@@ -47,7 +79,7 @@ export default function Navbar() {
                       <h6 className="hover:bg-blue-400 cursor-pointer hover:text-white border-l-transparent hover:border-l-white border-l-4 p-[1px]  w-[200px]">
                         Anambra
                       </h6>
-                      <Link href="/agency/location/lagos-island">
+                      <Link href="/agency/location/lagos-mainland">
                         <h6 className="hover:bg-blue-400 cursor-pointer hover:text-white border-l-transparent hover:border-l-white border-l-4 p-[1px]  w-[200px]">
                           Lagos Island
                         </h6>
