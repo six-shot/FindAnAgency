@@ -1,9 +1,112 @@
-"use client"
+// "use client"
+// import getTask from "@/libs/getTask";
+// import type { Metadata } from "next";
+// import Image from "next/image";
+// import Link from "next/link";
+// import { useState,useEffect } from "react";
+
+// type Params = {
+//   params: {
+//     taskId: string;
+//   };
+// };
+
+// async function generateMetadata({
+//   params: { taskId },
+// }: Params): Promise<Metadata> {
+//   const taskData: Promise<Task> = getTask(taskId);
+//   const task: Task = await taskData;
+
+//   return {
+//     title: task.name,
+//     description: `This is the page of ${task.name}`,
+//   };
+// }
+
+// export default function UserPage({ params: { taskId } }: Params) {
+//    const [task, setTask] = useState<Task | null>(null);
+
+//    useEffect(() => {
+//      const fetchData = async () => {
+//        try {
+//          const taskData: Promise<Task> = getTask(taskId);
+//          const task: Task = await taskData;
+//          setTask(task);
+//        } catch (error) {
+//          console.error("Error fetching data:", error);
+//        } 
+//      };
+
+//      fetchData();
+//    }, [taskId]);
+
+//   return (
+//     <>
+//       <div className="max-w-[1440px] mx-auto">
+//         {task?(<><h2 className="xl:text-[60px] text-[30px] border-b-[1px] border-black">{task.name}</h2>
+//         <div>
+//           <div className="flex flex-row items-center gap-5 mt-10">
+//             <div className="relative w-[150px] h-[100px]">
+//               <Image
+//                 src={task?.logoURL}
+//                 layout="fill"
+//                 objectFit="cover"
+//                 alt="logo"
+//               />
+//             </div>
+
+//             <div className="flex gap-3 flex-col w-[80%]">
+//               <div className="flex gap-2">
+//                 <span className="font-bold">Business Name:</span>
+//                 <h5>{task.name}</h5>
+//               </div>
+//               <div className="flex gap-2">
+//                 <span className="font-bold">Services:</span>
+//                 <h5 className="text-blue-700">
+//                   <Link href="/">{task.services}</Link>
+//                 </h5>
+//               </div>
+//               <div className="">
+//                 <span className="font-bold">About:</span>
+//                 <h5>{task.about}</h5>
+//               </div>
+//             </div>
+//           </div>
+//           <div className="flex flex-row items-center gap-5 mt-10">
+//             <div className="relative w-[150px] h-[100px]"></div>
+//             <div className="mt-2 flex  gap-2 flex-col">
+//               <div className="flex gap-2">
+//                 <span className="font-bold">Business Website:</span>
+//                 <h5 className="text-blue-700">
+//                   <Link href="/">{task.website}</Link>
+//                 </h5>
+//               </div>
+//               <div className="flex gap-2">
+//                 <span className="font-bold">Business Phone Number:</span>
+//                 <h5>{task.phone_number}</h5>
+//               </div>
+//               <div className="flex gap-2">
+//                 <span className="font-bold">Location:</span>
+//                 <h5 className="text-blue-700">
+//                   <Link href="/">{task.location}</Link>
+//                 </h5>
+//               </div>
+//               <div className="flex gap-2">
+//                 <span className="font-bold">Business Address:</span>
+//                 <h5>{task.address}</h5>
+//               </div>
+//             </div>
+//           </div>
+//         </div></>):(<p>loading....</p>)}
+        
+//       </div>
+//     </>
+//   );
+// }
 import getTask from "@/libs/getTask";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { useState,useEffect } from "react";
 
 type Params = {
   params: {
@@ -11,7 +114,7 @@ type Params = {
   };
 };
 
-async function generateMetadata({
+export async function generateMetadata({
   params: { taskId },
 }: Params): Promise<Metadata> {
   const taskData: Promise<Task> = getTask(taskId);
@@ -23,32 +126,20 @@ async function generateMetadata({
   };
 }
 
-export default function UserPage({ params: { taskId } }: Params) {
-   const [task, setTask] = useState<Task | null>(null);
+export default async function UserPage({ params: { taskId } }: Params) {
+  const taskData: Promise<Task> = getTask(taskId);
 
-   useEffect(() => {
-     const fetchData = async () => {
-       try {
-         const taskData: Promise<Task> = getTask(taskId);
-         const task: Task = await taskData;
-         setTask(task);
-       } catch (error) {
-         console.error("Error fetching data:", error);
-       } 
-     };
-
-     fetchData();
-   }, [taskId]);
+  const task = await taskData;
 
   return (
     <>
       <div className="max-w-[1440px] mx-auto">
-        {task?(<><h2 className="xl:text-[60px] text-[30px] border-b-[1px] border-black">{task.name}</h2>
+        <h2 className="text-[60px] border-b-[1px] border-black">{task.name}</h2>
         <div>
           <div className="flex flex-row items-center gap-5 mt-10">
             <div className="relative w-[150px] h-[100px]">
               <Image
-                src={task?.logoURL}
+                src={task.logoURL}
                 layout="fill"
                 objectFit="cover"
                 alt="logo"
@@ -97,8 +188,7 @@ export default function UserPage({ params: { taskId } }: Params) {
               </div>
             </div>
           </div>
-        </div></>):(<p>loading....</p>)}
-        
+        </div>
       </div>
     </>
   );
