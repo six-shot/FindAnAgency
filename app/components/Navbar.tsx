@@ -82,14 +82,16 @@ export default function Navbar() {
                       <h6 className="hover:bg-blue-400 cursor-pointer hover:text-white border-l-transparent hover:border-l-white border-l-4 p-[1px]  w-[200px]">
                         Anambra
                       </h6>
-                      <Link href="/agency/location/lagos-mainland">
+                      <Link href="/agency/location/lagos-island">
                         <h6 className="hover:bg-blue-400 cursor-pointer hover:text-white border-l-transparent hover:border-l-white border-l-4 p-[1px]  w-[200px]">
                           Lagos Island
                         </h6>
                       </Link>
-                      <h6 className="hover:bg-blue-400 cursor-pointer hover:text-white border-l-transparent hover:border-l-white border-l-4 p-[1px]  w-[200px]">
-                        Lagos Mainland
-                      </h6>
+                      <Link href="/agency/location/lagos-mainland">
+                        <h6 className="hover:bg-blue-400 cursor-pointer hover:text-white border-l-transparent hover:border-l-white border-l-4 p-[1px]  w-[200px]">
+                          Lagos Mainland
+                        </h6>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -121,7 +123,7 @@ export default function Navbar() {
               <div className="relative z-[999] flex h-screen w-full  flex-col bg-[#1354F0] px-4  py-5">
                 <div className="flex items-end justify-end">
                   {" "}
-                  <div >
+                  <div>
                     <IconContext.Provider
                       value={{ size: "25px", color: "white" }}
                     >
