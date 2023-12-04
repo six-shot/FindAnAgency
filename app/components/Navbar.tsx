@@ -9,12 +9,12 @@ export default function Navbar() {
 
 
   return (
-    <div className="flex ">
-      <header className="bg-white w-full flex justify-between items-center fixed top-0 xl:px-14 z-[999]  px-5 h-[60px] sm:h-[80px]">
+    <div className="flex max-w-[1440px] mx-auto   ">
+      <header className="flex w-full justify-between items-center py-6 border-b border-gray-300  ">
+        {" "}
         <Link href="/">
           <Image src={logo} className="xl:w-[200px] w-[180px]" alt="logo" />
         </Link>
-
         <nav className="sm:flex hidden">
           <ul className="flex gap-5  text-[#999999] ">
             <li className="font-nunito">Home</li>
@@ -28,6 +28,9 @@ export default function Navbar() {
           <RiMenu2Line className="text-[25px]" />
         </div>
       </header>
+      {/* <header className="bg-white w-full flex justify-between items-center fixed top-0 xl:px-14 z-[999]  px-5 2xl:px-0 h-[60px] sm:h-[80px]">
+       
+      </header> */}
     </div>
   );
 }

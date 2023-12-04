@@ -8,6 +8,11 @@ type Task = {
   logoURL: string;
   about: string;
   featured: string;
+  services:string;
+  address:string;
+  phone_number:string;
+  location:string;
+  website:string;
   data: {
     name: string;
     logo: string;

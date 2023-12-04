@@ -18,12 +18,12 @@ export default function Ranking() {
             <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
           </div>
 
-          <div className="  flex w-full h-full justify-center flex-col items-start px-20 z-50 ">
-            <h5 className=" font-bold  z-50">Agency Ranking</h5>
+          <div className="  flex w-full h-full justify-center flex-col items-start px-20 z-10 ">
+            <h5 className=" font-bold  ">Agency Ranking</h5>
             <h3 className="text-[34px] z-50 leading-[34px] font-bold mt-5">
               Top 10 Digital Marketing <br /> Agencies In Nigeria (2020)
             </h3>
-            <p className="text-white xl:w-[500px] text-base  font-medium  xl:mt-10 mb-10 mt-5 z-50">
+            <p className="text-white xl:w-[500px] text-base  font-medium  xl:mt-10 mb-10 mt-5 ">
               Digital Marketing is fast becoming the preferred marketing option
               for companies in Nigeria. This is unsurprising given the
               increasing number…

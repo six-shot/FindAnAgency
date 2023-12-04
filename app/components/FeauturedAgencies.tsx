@@ -1,8 +1,9 @@
 "use client";
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
-import acumen from "@/public/acumen.png";
+
 import { Button } from "./buttons/Button";
+import Link from "next/link";
 
 
 
@@ -27,32 +28,37 @@ export default function FeaturedAgencies() {
           <h2 className="text-[#444444c7] font-bold font-poppins text-[27px] text-center">
             Featured Agencies In Nigeria
           </h2>
-          
-          <div className="">
+
+          {/* <div className="">
             {agency.length > 0 && (
               <div className="grid grid-cols-3 space-y-10 space-x-5">
                 {agency.map((task) => (
-                  <div className="bg-[#e1e4f7] hover:bg-[#ffffff34] p-3  rounded-sm" key={task.id}>
-                    <div className="w-[250px] h-[100px] bg-[#e1e4f7] shadow-2xl">
-                      <Image
-                        src={task.data.logoURL}
-                        width={600}
-                        height={600}
-                        alt="logo"
-                        className="object-cover w-full h-full"
-                      />
+                  <Link href={`/agency/${task.id}`} key={task.id}>
+                    <div
+                      className="bg-[#e1e4f7] hover:bg-[#ffffff34] p-3  rounded-sm"
+              
+                    >
+                      <div className="w-[250px] h-[100px] bg-[#e1e4f7] shadow-2xl">
+                        <Image
+                          src={task.data.logoURL}
+                          width={600}
+                          height={600}
+                          alt="logo"
+                          className="object-cover w-full h-full"
+                        />
+                      </div>
+                      <h4 className="text-[#302f2fc7] text-2xl mt-7 my-2 font-semibold">
+                        {task.data.name}
+                      </h4>
+                      <p className="text-[#444444c7] line-clamp-3 ">
+                        {task.data.about}
+                      </p>
                     </div>
-                    <h4 className="text-[#302f2fc7] text-2xl mt-7 my-2 font-semibold">
-                      {task.data.name}
-                    </h4>
-                    <p className="text-[#444444c7] line-clamp-3 ">
-                      {task.data.about}
-                    </p>
-                  </div>
+                  </Link>
                 ))}
               </div>
             )}
-          </div>
+          </div> */}
           <Button>See All Agencies</Button>
         </div>
       </div>

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Nunito,Playfair_Display,Poppins } from 'next/font/google'
 import './globals.css'
 import Navbar from './components/Navbar'
+import Footer from './components/Footer'
 
 const nunito = Nunito({ subsets: ['latin'],
 weight:["200","300","400","500","600","700","800","900"],
@@ -29,7 +30,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${nunito.variable}`}>
         <Navbar/>
-        {children}</body>
+        {children}
+        <Footer/></body>
     </html>
   )
 }
