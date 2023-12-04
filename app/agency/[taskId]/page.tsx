@@ -1,7 +1,9 @@
+"use client"
 import getTask from "@/libs/getTask";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useState,useEffect } from "react";
 
 type Params = {
   params: {
@@ -9,7 +11,7 @@ type Params = {
   };
 };
 
-export async function generateMetadata({
+async function generateMetadata({
   params: { taskId },
 }: Params): Promise<Metadata> {
   const taskData: Promise<Task> = getTask(taskId);
@@ -21,20 +23,32 @@ export async function generateMetadata({
   };
 }
 
-export default async function UserPage({ params: { taskId } }: Params) {
-  const taskData: Promise<Task> = getTask(taskId);
+export default function UserPage({ params: { taskId } }: Params) {
+   const [task, setTask] = useState<Task | null>(null);
 
-  const task = await taskData;
+   useEffect(() => {
+     const fetchData = async () => {
+       try {
+         const taskData: Promise<Task> = getTask(taskId);
+         const task: Task = await taskData;
+         setTask(task);
+       } catch (error) {
+         console.error("Error fetching data:", error);
+       } 
+     };
+
+     fetchData();
+   }, [taskId]);
 
   return (
     <>
       <div className="max-w-[1440px] mx-auto">
-        <h2 className="text-[60px] border-b-[1px] border-black">{task.name}</h2>
+        {task?(<><h2 className="text-[60px] border-b-[1px] border-black">{task.name}</h2>
         <div>
           <div className="flex flex-row items-center gap-5 mt-10">
             <div className="relative w-[150px] h-[100px]">
               <Image
-                src={task.logoURL}
+                src={task?.logoURL}
                 layout="fill"
                 objectFit="cover"
                 alt="logo"
@@ -83,7 +97,8 @@ export default async function UserPage({ params: { taskId } }: Params) {
               </div>
             </div>
           </div>
-        </div>
+        </div></>):(<p>loading....</p>)}
+        
       </div>
     </>
   );
