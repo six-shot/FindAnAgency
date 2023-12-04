@@ -142,7 +142,7 @@ export default async function UserPage({ params: { taskId } }: Params) {
         </h2>
         <div>
           <div className="flex xl:flex-row flex-col xl:items-center gap-5 xl:mt-10">
-            <div className="relative xl:w-[150px] w-[150px] h-[70px] ">
+            <div className="relative xl:w-[200px] w-[150px] h-[70px] ">
               <Image
                 src={task.logoURL}
                 layout="fill"
@@ -170,7 +170,7 @@ export default async function UserPage({ params: { taskId } }: Params) {
             </div>
           </div>
           <div className="flex xl:flex-row flex-col items-center gap-5 xl:mt-6okay  mt-3">
-            <div className="relative w-[150px] h-[100px] sm:flex hidden"></div>
+            <div className="relative w-[200px] h-[100px] sm:flex hidden"></div>
             <div className="mt-2 flex  gap-2 flex-col">
               <div className="flex leading-[24px]">
                 <h5>
