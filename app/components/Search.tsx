@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import axios from "axios";
 import { IoClose, IoSearch } from "react-icons/io5";
 import debounce from "lodash/debounce"; // Import the debounce function
@@ -60,7 +60,8 @@ const Search = () => {
             className="outline-none bg-transparent w-full h-full px-4"
             type="text"
             value={input}
-            onChange={(e) => handleInputChange(e)} // Change here to handle input change
+            onChange={(e) => handleInputChange(e)} 
+            placeholder="Search here..."
           />
           <div>
             <div>
@@ -83,19 +84,21 @@ const Search = () => {
       {!isLoading && tasks.length === 0 && input.trim() !== "" && ""}
 
       {tasks.length > 0 && (
-        <div className="z-[999] xl:w-[700px] w-full py-2 mt-3 bg-white rounded flex flex-col gap-3 px-6 justify-between ">
+        <div className="z-[999] xl:w-[700px] w-full py-2 mt-3 bg-white rounded flex flex-col  px-6 gap-5  h-[400px] overflow-y-scroll overflow-hidden">
           {tasks.map((task) => (
             <Link href={`/agency/${task.id}`} key={task.id}>
-              <div className="flex items-center gap-2">
-                <div className="w-[300px] h-[60px]">
-                  <Image
+              <div className="flex gap-2  ">
+                <div className="w-[20%] h-[120px]    ">
+                  <div className=" relative w-full h-full object-cover">
+                    <Image
                     src={task.logoURL}
+                    layout="fill"
+                    
                     alt="logo"
-                    width={300}
-                    height={60}
                   />
+                  </div>
                 </div>
-                <div className="">
+                <div className="w-[80%]">
                   <h5 className="text-sm text-blue-700 font-medium font-nunito">
                     {task.name}
                   </h5>

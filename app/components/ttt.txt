@@ -1,10 +1,11 @@
 "use client";
 import React, { ChangeEventHandler, FormEventHandler, useState } from "react";
+import Select from "react-select";
+
 import { IoMdClose } from "react-icons/io";
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import { Button } from "./buttons/Button";
-import Select from "react-select";
 
 export default function MyModal() {
   let [isOpen, setIsOpen] = useState(false);
@@ -19,34 +20,25 @@ export default function MyModal() {
   const [userInfo, setUserInfo] = useState({
     name: "",
     address: "",
-    services: [] as ReadonlyArray<{ value: string; label: string }>,
+services[],
     servicesList: [
-      {
-        value: "Digital Marketing Agencies",
-        label: "Digital Marketing Agencies",
-      },
-      { value: "Content Marketing", label: "Content Marketing" },
-      { value: "Design", label: "Design" },
-      { value: "Digital Marketing", label: "Digital Marketing" },
-      { value: "Email Marketing", label: "Email Marketing" },
-      { value: "Mobile Development", label: "Mobile Development" },
-      { value: "Mobile Marketing", label: "Mobile Marketing" },
-      {
-        value: "Online Reputation Managemnet",
-        label: "Online Reputation Managemnet",
-      },
-      { value: "Pay per Click Marketing", label: "Pay per Click Marketing" },
-      {
-        value: "Search Engine Optimization",
-        label: "Search Engine Optimization",
-      },
-      { value: "Social Media Marketing", label: "Social Media Marketing" },
-      { value: "Website Development", label: "Website Development" },
-      { value: "Traditional Services", label: "Traditional Services" },
-      { value: "Boutique", label: "Boutique" },
-      { value: "Experiential", label: "Experiential" },
-      { value: "Media", label: "Media" },
-      { value: "Public Relations(PR)", label: "Public Relations(PR)" },
+      { value: "service1", label: "Digital Marketing Agencies" },
+      { value: "service2", label: "Content Marketing" },
+      { value: "service3", label: "Design" },
+      { value: "service3", label: "Digital Marketing" },
+      { value: "service3", label: "Email Marketing" },
+      { value: "service3", label: "Mobile Development" },
+      { value: "service3", label: "Mobile Marketing" },
+      { value: "service3", label: "Online Reputation Managemnet" },
+      { value: "service3", label: "Pay per Click Marketing" },
+      { value: "service3", label: "Search Engine Optimization" },
+      { value: "service3", label: "Social Media Marketing" },
+      { value: "service3", label: "Website Development" },
+      { value: "service3", label: "Traditional Services" },
+      { value: "service3", label: "Boutique" },
+      { value: "service3", label: "Experiential" },
+      { value: "service3", label: "Media" },
+      { value: "service3", label: "Public Relations(PR)" },
     ],
     about: "",
     phone_number: "",
@@ -76,13 +68,6 @@ export default function MyModal() {
       setUserInfo({ ...userInfo, logo: file });
     }
   };
-  const generateServiceLinks = () => {
-    return services.map((service) => (
-      <a key={service.value} href={`#${service.value}`}>
-        {service.label}
-      </a>
-    ));
-  };
 
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     setBusy(true);
@@ -91,19 +76,18 @@ export default function MyModal() {
     const formData = new FormData();
     formData.append("name", name);
     formData.append("address", address);
-    formData.append(
-      "services",
-      userInfo.services.map((service) => service.value).join(",")
-    );
-formData.append("about", about);
+    formData.append("about", about);
     formData.append("website", website);
     formData.append("phone_number", phone_number);
     formData.append("location", location);
     formData.append("featured", featured);
     if (logo !== null) {
       formData.append("logo", logo);
-    };
-
+    }
+ formData.append(
+   "services",
+   userInfo.services.map((service) => service.value).join(",")
+ )
     try {
       const res = await fetch("https://gind-agencies.onrender.com/api/create", {
         method: "POST",
@@ -113,13 +97,13 @@ formData.append("about", about);
         setUserInfo({
           name: "",
           address: "",
-          services: [] as { value: string; label: string }[],
-          servicesList: [],
+          services: [],
           about: "",
           phone_number: "",
           website: "",
           location: "",
           featured: "",
+
           logo: null,
         });
 
@@ -206,9 +190,6 @@ formData.append("about", about);
                       <label className="mb-2 text-base">
                         Services<sup>*</sup>
                       </label>
-                      <div className="service-links">
-                        {generateServiceLinks()}
-                      </div>
                       <Select
                         isMulti
                         options={userInfo.servicesList}

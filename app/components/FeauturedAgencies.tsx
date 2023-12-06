@@ -5,7 +5,8 @@ import React, { useState, useEffect } from "react";
 import { Button } from "./buttons/Button";
 import Link from "next/link";
 import { navLinks } from "../api/Data";
-
+import { staggerContainer, textVariant, fadeIn } from "@/app/api/Motion";
+import { motion } from "framer-motion";
 export default function FeaturedAgencies() {
   // const [agency, setAgency] = useState<Task[]>([]);
 
@@ -21,17 +22,26 @@ export default function FeaturedAgencies() {
   // });
 
   return (
-    <div className="bg-[#e1e4f7] py-20 mt-20">
+    <motion.div
+      variants={staggerContainer(0.1, 0.1)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: false, amount: 0.25 }}
+      className="bg-[#e1e4f7] py-20 mt-20"
+    >
       <div className="max-w-[1440px] mx-auto  ">
         <div className="flex justify-center items-center flex-col gap-10">
-          <h2 className="text-[#444444c7] font-bold font-poppins text-[27px] text-center px-4">
+          <h2 className="text-[#444444c7] font-medium font-poppins text-[27px] text-center px-4 ">
             Featured Agencies In Nigeria
           </h2>
           <div className="grid sm:grid-cols-3 grid-cols-1 w-full space-y-10 space-x-5">
             {navLinks.map((navLink) => {
               return (
                 <Link href={`/agency/${navLink.id}`} key={navLink.id}>
-                  <div className="bg-[#e1e4f7] hover:bg-[#ffffff34] p-3  rounded-sm">
+                  <motion.div
+                    variants={fadeIn("up", "tween", 0.2, 1)}
+                    className="bg-[#e1e4f7] hover:bg-[#ffffff34] p-3  rounded-sm"
+                  >
                     <div className="w-[250px] h-[100px] bg-[#e1e4f7] shadow-2xl">
                       <Image
                         src={navLink.logo}
@@ -41,13 +51,13 @@ export default function FeaturedAgencies() {
                         className="object-cover w-full h-full"
                       />
                     </div>
-                    <h4 className="text-[#302f2fc7] text-2xl mt-7 my-2 font-semibold">
+                    <h4 className="text-[#302f2fc7] text-[20px] mt-7 my-2 font-semibold font-nunito">
                       {navLink.name}
                     </h4>
-                    <p className="text-[#444444c7] line-clamp-3 ">
+                    <p className="text-[#444444c7] line-clamp-3 font-nunito">
                       {navLink.about}
                     </p>
-                  </div>
+                  </motion.div>
                 </Link>
               );
             })}
@@ -84,10 +94,11 @@ export default function FeaturedAgencies() {
               </div>
             )}
           </div> */}
-
-          <Button>See All Agencies</Button>
+          <Link href="/agencylisting">
+            <Button>See All Agencies</Button>
+          </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

@@ -11,7 +11,7 @@ function MyTabs() {
     <div className="max-w-[1440px] mx-auto">
       <Tab.Group>
         <div className="">
-          <Tab.List className="flex justify-center items-center mb-[33px] w-[100%] border-b border-gray-300">
+          <Tab.List className="flex justify-center items-center mb-[33px] w-[100%] border-b border-gray-300 font-nunito">
             <Tab as={Fragment}>
               {({ selected }) => (
                 <div

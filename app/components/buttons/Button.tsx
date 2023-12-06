@@ -42,10 +42,10 @@ export const Button = ({
       className={`
    
           ${getVariant(variant)}  transition duration-75  ${
-        !paddingLess && "sm:px-7 sm:py-2 px-2 py-1  text-base"
+        !paddingLess && "sm:px-7 sm:py-2 px-2 py-1  text-sm"
       }  ${
         !square && "rounded sm:rounded-[5px]"
-      } active:scale-95 ${className} `}
+      } active:scale-95 ${className} font-opensans`}
     >
       {children}
     </button>

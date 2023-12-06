@@ -24,8 +24,8 @@ export default function Navbar() {
           <Image src={logo} className="xl:w-[200px] w-[180px]" alt="logo" />
         </Link>
         <nav className="sm:flex hidden">
-          <ul className="flex gap-5  text-[#999999] ">
-            <li className="font-nunito">Home</li>
+          <ul className="flex gap-5  text-[#999999] font-nunito">
+            <li className="">Home</li>
 
             <div className="relative">
               <div
@@ -62,7 +62,7 @@ export default function Navbar() {
                 className="flex items-center gap-1   "
                 onClick={() => setIsOpen((prev) => !prev)}
               >
-                <h6 className="cursor-pointer">Search By Location</h6>
+                <h6 className="cursor-pointer font-nunito">Search By Location</h6>
                 {!isOpen ? (
                   <PiIcons.PiCaretDownBold />
                 ) : (
@@ -97,6 +97,8 @@ export default function Navbar() {
                 </div>
               )}
             </div>
+            <li className="">Blog</li>
+            <li className="">Contact us</li>
           </ul>
         </nav>
         <div className="flex items-end justify-end py-5 px-4 sm:hidden">

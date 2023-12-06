@@ -138,10 +138,10 @@ export default async function UserPage({ params: { taskId } }: Params) {
           {task.name}
         </h2>
         <h2 className="py-2 text-blue-700 flex w-full items-end justify-end">
-         Return to Directory
+          Return to Directory
         </h2>
         <div>
-          <div className="flex xl:flex-row flex-col xl:items-center gap-5 xl:mt-10">
+          <div className="flex xl:flex-row flex-col xl:items-start gap-5 xl:mt-10">
             <div className="relative xl:w-[200px] w-[150px] h-[70px] ">
               <Image
                 src={task.logoURL}
@@ -158,9 +158,12 @@ export default async function UserPage({ params: { taskId } }: Params) {
                 </h5>
               </div>
               <div className="flex leading-[24px]">
-                <h5>
-                  <span className="font-bold">Services:</span> {task.services}
-                </h5>
+                <Link href="/">
+                  {" "}
+                  <h5>
+                    <span className="font-bold">Services:</span> {task.services}
+                  </h5>
+                </Link>
               </div>
               <div className="flex leading-[30px]">
                 <h5>

@@ -6,7 +6,7 @@ import giga from "@/public/Giga-lagos.png"
 import edubridge from "@/public/edubridge-1.png"
 export const navLinks = [
   {
-    id: "JfirvKA8pEahrSpOgDtM",
+    id: "VTQc56uwkHFUkDzNV4jz",
     logo: wow,
     name: "Wow Effect Communications",
     about:
@@ -20,28 +20,28 @@ export const navLinks = [
       "Amplify is a full-service digital marketing,creative solutions and technology agency with an extensive reputation in wesst africa",
   },
   {
-    id: "jNUxTL4tS57hSmviCaW5",
+    id: "dI9vdJ2ZvgzxZEQPL6vi",
     logo: acumen,
     name: "Acumen",
     about:
       "We develop interactive strategies and experiences, implementing projects that provides extraordinary values for brannds through beautifully crafted designs",
   },
   {
-    id: "Jz67czF2QtSNHC8eDp9Fe",
+    id: "KqalOfscElt9VfKZ4R7G",
     logo: anakle,
     name: "Ankale",
     about:
       "Anakle is a digital advertising agency based in lagos. Easily the most creative Digital Marketing company in Nigeria",
   },
   {
-    id: "y3UEF8LF7pOVcFCkp9Yx",
+    id: "BPCkhRoIuOKTUdgJbGSA",
     logo: giga,
     name: "Giga Lagos",
     about:
       "we exists to help brands do marketing that meets those two criteria.In essence ,we do what we call AWESOME MARKETING.",
   },
   {
-    id: "blYTdGJglK4lIuyVisYb",
+    id: "06f8K4XdfH5x9q22p2jr",
     logo: edubridge,
     name: "Edubridge",
     about:

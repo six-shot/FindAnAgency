@@ -5,9 +5,9 @@ import { Button } from './buttons/Button';
 
 export default function Ranking() {
   return (
-    <div className="max-w-[1440px] mx-auto my-28 ">
+    <div className="max-w-[1440px] mx-auto my-28  ">
       <div className="flex xl:justify-center items-center 2xl:px-0 xl:px-10 px-6">
-        <div className="h-[70vh] relative xl:w-[80vw]  p-2 rounded-3xl flex justify-center items-center   bg-black text-white  ">
+        <div className="h-[70vh] relative xl:w-[100vw]  p-2 rounded-3xl flex justify-center items-center   bg-black text-white  ">
           <div className="absolute top-0 left-0 w-full h-full rounded-3xl overflow-hidden bg-black">
             <Image
               src={top}
@@ -19,11 +19,11 @@ export default function Ranking() {
           </div>
 
           <div className="  flex w-full h-full justify-center flex-col items-start sm:px-20 px-4 z-10 ">
-            <h5 className=" font-bold  ">Agency Ranking</h5>
-            <h3 className="text-[34px] z-50 leading-[34px] font-bold mt-5">
+            <h5 className=" font-bold font-nunito ">Agency Ranking</h5>
+            <h3 className="text-[28px] z-50 leading-[38px] mt-5 font-nunito">
               Top 10 Digital Marketing <br /> Agencies In Nigeria (2020)
             </h3>
-            <p className="text-white xl:w-[500px] text-base  font-medium  xl:mt-10 mb-10 mt-5 ">
+            <p className="text-white xl:w-[500px] text-base  font-medium  xl:mt-10 mb-10 mt-5 font-nunito">
               Digital Marketing is fast becoming the preferred marketing option
               for companies in Nigeria. This is unsurprising given the
               increasing number…

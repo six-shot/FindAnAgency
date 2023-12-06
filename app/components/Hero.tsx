@@ -16,7 +16,7 @@ export default function Hero() {
       >
      
         <div className="flex flex-col gap-10 w-full justify-center items-center px-4 ">
-          <h1 className=" flex justify-center items-center w-full font-play_fair text-white xl:text-[60px] text-[30px]  text-center sm:leading-[63px] leading-[35px]">
+          <h1 className=" flex justify-center items-center w-full font-playfair text-white xl:text-[60px] text-[30px]  text-center sm:leading-[63px] leading-[35px]">
             The most comprehensive listing of
             <br className="sm:flex hidden" /> marketing agencies in Nigeria
           </h1>

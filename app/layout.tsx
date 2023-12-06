@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Nunito,Playfair_Display,Poppins } from 'next/font/google'
+import { Nunito,Open_Sans,Playfair_Display,Poppins } from 'next/font/google'
 import './globals.css'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -8,13 +8,18 @@ const nunito = Nunito({ subsets: ['latin'],
 weight:["200","300","400","500","600","700","800","900"],
 variable:'--font-nunito' })
 
-const play_fair = Playfair_Display({ subsets: ['latin'],
+const playfair = Playfair_Display({ subsets: ['latin'],
 weight:["400","500","600","700","800","900"],
-variable:'--font-play_fair' })
+variable:'--font-playfair' })
 
 const poppins = Poppins({ subsets: ['latin'],
 weight:["400","500","600","700","800","900"],
-variable:'--font-play_fair' })
+variable:'--font-poppins' })
+const opensans = Open_Sans({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-opensans",
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -27,11 +32,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={`${nunito.variable}`}>
-        <Navbar/>
+    <html
+      lang="en"
+      className={`${playfair.variable} ${nunito.variable} ${poppins.variable} ${opensans.variable}`}
+    >
+      <body>
+        <Navbar />
         {children}
-        <Footer/></body>
+        <Footer />
+      </body>
     </html>
-  )
+  );
 }
