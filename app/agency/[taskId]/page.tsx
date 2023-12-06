@@ -160,8 +160,8 @@ export default async function UserPage({ params: { taskId } }: Params) {
               <div className="flex leading-[24px]">
                 <Link href="/">
                   {" "}
-                  <h5>
-                    <span className="font-bold">Services:</span> {task.services}
+                  <h5 className="text-blue-700">
+                    <span className="font-bold text-black">Services:</span> {task.services}
                   </h5>
                 </Link>
               </div>
@@ -176,8 +176,8 @@ export default async function UserPage({ params: { taskId } }: Params) {
             <div className="relative w-[200px] h-[100px] sm:flex hidden"></div>
             <div className="mt-2 flex  gap-2 flex-col">
               <div className="flex leading-[24px]">
-                <h5>
-                  <span className="font-bold">Business Website Address:</span>{" "}
+                <h5 className="text-blue-700">
+                  <span className="font-bold text-black">Business Website Address:</span>{" "}
                   {task.website}
                 </h5>
               </div>
