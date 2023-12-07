@@ -6,7 +6,7 @@ import { Button } from './buttons/Button';
 export default function Ranking() {
   return (
     <div className="max-w-[1440px] mx-auto my-28  ">
-      <div className="flex xl:justify-center items-center px-[6%] 2xl:px-0 xl:px-10 ">
+      <div className="flex  px-[6%] 2xl:px-0  ">
         <div className="h-[70vh] relative xl:w-[100vw]  p-2 rounded-3xl flex justify-center items-center   bg-black text-white  ">
           <div className="absolute top-0 left-0 w-full h-full rounded-3xl overflow-hidden bg-black">
             <Image
