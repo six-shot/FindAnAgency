@@ -18,7 +18,7 @@ export default function Navbar() {
   const [isOpenDrop, setIsOpenDrop] = useState(false);
   return (
     <div className="flex max-w-[1440px] mx-auto   ">
-      <header className="flex w-full justify-between items-center sm:py-6 py-3 border-b px-5 border-gray-300  ">
+      <header className="flex w-full justify-between items-center sm:py-6 py-3 border-b px-[6%] 2xl:px-0 border-gray-300  ">
         {" "}
         <Link href="/">
           <Image src={logo} className="xl:w-[200px] w-[180px]" alt="logo" />

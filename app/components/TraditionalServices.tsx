@@ -8,7 +8,7 @@ export default function TraditionalServices() {
   return (
     <div>
       <div>
-        <div className="grid sm:grid-cols-4 w-full grid-cols-1 px-14 2xl:px-0 max-w-[1440px] mx-auto">
+        <div className="grid sm:grid-cols-4 w-full grid-cols-1 px-[6%] 2xl:px-0  max-w-[1440px] mx-auto">
           <div className="flex  items-center flex-col font-nunito">
             <Image src={pr} alt="social" />
             <h4 className="font-semibold">Public Relation</h4>

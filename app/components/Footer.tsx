@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Footer() {
   return (
-    <div className="bg-[#161616e7] text-white pt-20 pb-5 font-nunito ">
+    <div className="bg-[#161616e7] text-white pt-20 px-[6%] 2xl:px-0 pb-5 font-nunito ">
       <div className=" max-w-[1440px] mx-auto px-4">
         <div className="flex flex-col sm:flex-row ">
           <div className="flex  flex-col sm:gap-6">
@@ -25,7 +25,7 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-        <div className='pt-20'>
+        <div className="pt-20">
           <ul>© 2023 Find An Agency.</ul>
         </div>
       </div>

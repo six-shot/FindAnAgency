@@ -97,7 +97,7 @@ export const metadata: Metadata = {
 };
 
 export default async function TasksPage() {
-  try {
+
     const tasksData: Promise<Task[]> = getAllTasks();
     const tasks = await tasksData;
 
@@ -113,7 +113,6 @@ export default async function TasksPage() {
     const content = (
       <section>
         {allServices.map((service, index) => (
-            
           <h5 key={index}>{`${service}: (${filteredCounts[index].length})`}</h5>
         ))}
       </section>
@@ -121,9 +120,5 @@ export default async function TasksPage() {
     console.log("tasksData:", tasksData);
 
     return content;
-  } catch (error) {
-    console.error("Error fetching tasks:", error);
-    // Handle the error, e.g., display an error message
-    return <div>Error fetching tasks</div>;
-  }
+ 
 }

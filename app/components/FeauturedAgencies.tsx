@@ -29,7 +29,7 @@ export default function FeaturedAgencies() {
       viewport={{ once: false, amount: 0.25 }}
       className="bg-[#e1e4f7] py-20 mt-20"
     >
-      <div className="max-w-[1440px] mx-auto  ">
+      <div className="max-w-[1440px] mx-auto  px-[6%] 2xl:px-0">
         <div className="flex justify-center items-center flex-col gap-10">
           <h2 className="text-[#444444c7] font-medium font-poppins text-[27px] text-center px-4 ">
             Featured Agencies In Nigeria

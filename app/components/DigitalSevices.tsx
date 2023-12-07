@@ -13,7 +13,7 @@ export default function DigitalSevices() {
       whileInView="show"
       viewport={{ once: false, amount: 0.25 }}
     >
-      <div className="grid sm:grid-cols-3 grid-cols-1 2xl:px-0 max-w-[1440px] mx-auto">
+      <div className="grid sm:grid-cols-3 grid-cols-1 px-[6%] 2xl:px-0 max-w-[1440px] mx-auto">
         <div className="flex justify-center items-center flex-col font-nunito">
           <motion.div variants={fadeIn("up", "tween", 0.2, 1)} className="">
             <Image src={social} alt="social" />
