@@ -6,7 +6,7 @@ import giga from "@/public/Giga-lagos.png"
 import edubridge from "@/public/edubridge-1.png"
 export const navLinks = [
   {
-    id: "VTQc56uwkHFUkDzNV4jz",
+    id: "TO2txLjJysxYPbfcgDcJ",
     logo: wow,
     name: "Wow Effect Communications",
     about:
@@ -27,7 +27,7 @@ export const navLinks = [
       "We develop interactive strategies and experiences, implementing projects that provides extraordinary values for brannds through beautifully crafted designs",
   },
   {
-    id: "KqalOfscElt9VfKZ4R7G",
+    id: "SqWbSENF6BFY57OwTnzE",
     logo: anakle,
     name: "Ankale",
     about:
