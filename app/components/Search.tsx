@@ -1,11 +1,18 @@
-"use client";
-import React, {  useState } from "react";
+
+
+
+        "use client";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { IoClose, IoSearch } from "react-icons/io5";
 import debounce from "lodash/debounce"; // Import the debounce function
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+
+// ... (your existing imports)
+
+// ... (your existing imports)
 
 const Search = () => {
   const [input, setInput] = useState("");
@@ -14,6 +21,13 @@ const Search = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const debouncedSearch = debounce((searchTerm: string) => {
+    if (searchTerm === "") {
+      // If input is empty, do not perform the search
+      setTasks([]);
+      setIsLoading(false);
+      return;
+    }
+
     setIsLoading(true);
     axios
       .get(`https://gind-agencies.onrender.com/api/search?`, {
@@ -25,17 +39,21 @@ const Search = () => {
         const taskResults = res?.data?.data;
         setTasks(taskResults);
       })
+      .catch((error) => {
+        console.error("Error fetching search results:", error);
+        setTasks([]); // Set tasks to empty array on error
+      })
       .finally(() => {
         setIsLoading(false);
       });
-  }, 300); // Adjust the debounce delay as needed
+  }, 300);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const searchTerm = e.target.value;
     setInput(searchTerm);
 
     if (searchTerm === "") {
-      // If input is empty, hide the search results section
+      // If input is empty, hide the search results section and clear the results
       setTasks([]);
     } else {
       // If input is not empty, trigger the debounced search
@@ -47,9 +65,11 @@ const Search = () => {
     e.preventDefault();
     router.push(`?task=${input}`);
   };
+
   const closeResults = () => {
+    // Clear the input and search results
     setTasks([]);
-    setInput(""); 
+    setInput("");
   };
 
   return (
@@ -60,8 +80,7 @@ const Search = () => {
             className="outline-none bg-transparent w-full h-full px-4"
             type="text"
             value={input}
-            onChange={(e) => handleInputChange(e)} 
-            placeholder="Search here..."
+            onChange={(e) => handleInputChange(e)}
           />
           <div>
             <div>
@@ -81,24 +100,25 @@ const Search = () => {
         </div>
       </form>
 
-      {!isLoading && tasks.length === 0 && input.trim() !== "" && ""}
-
-      {tasks.length > 0 && (
-        <div className="z-[999] xl:w-[700px] w-full py-2 mt-3 bg-white rounded flex flex-col  px-6 gap-5  h-[400px] overflow-y-scroll overflow-hidden">
+      {!isLoading && input.trim() !== "" && tasks.length === 0 && (
+        <div className="xl:w-[700px] w-full py-2 mt-3 px-6 bg-white rounded">
+          <p>No search results {input} found.</p>
+        </div>
+      )}
+      {tasks.length > 0 && input.trim() !== "" && (
+        <div className="z-[999] xl:w-[700px] w-full py-2 mt-3 bg-white rounded flex flex-col gap-3 px-6 justify-between ">
           {tasks.map((task) => (
             <Link href={`/agency/${task.id}`} key={task.id}>
-              <div className="flex gap-2  ">
-                <div className="w-[20%] h-[120px]    ">
-                  <div className=" relative w-full h-full object-cover">
-                    <Image
+              <div className="flex items-center gap-2">
+                <div className="w-[300px] h-[60px]">
+                  <Image
                     src={task.logoURL}
-                    layout="fill"
-                    
                     alt="logo"
+                    width={300}
+                    height={60}
                   />
-                  </div>
                 </div>
-                <div className="w-[80%]">
+                <div className="">
                   <h5 className="text-sm text-blue-700 font-medium font-nunito">
                     {task.name}
                   </h5>
@@ -114,3 +134,5 @@ const Search = () => {
 };
 
 export default Search;
+
+
