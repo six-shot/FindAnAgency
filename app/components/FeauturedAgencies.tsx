@@ -94,7 +94,7 @@ export default function FeaturedAgencies() {
               </div>
             )}
           </div> */}
-          <Link href="/agencylisting">
+          <Link href="/business-directory">
             <Button>See All Agencies</Button>
           </Link>
         </div>

@@ -1,34 +1,41 @@
 import getAllTasks from "@/libs/getAllTask";
-import { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image"
 
-export const metadata: Metadata = {
-  title: "List of Marketing Agencies in lagos(mainland) ",
-  description: "List of Marketing Agencies in lagos(island)",
+type Params = {
+  params: {
+    service: string;
+  };
 };
-export default async function TasksPage() {
+
+export default async function page({ params: { service } }: Params) {
   const tasksData: Promise<Task[]> = getAllTasks();
+const tasks = await tasksData;
+const decodedService = decodeURIComponent(service); // Decode the URL-encoded service parameter
+const filteredTasks = tasks.filter((task) => {
+  const taskServices = task.data.services
+    .split(",")
+    .map((s) => s.trim().toLowerCase());
 
-  const tasks = await tasksData;
-  const filteredTasks = tasks.filter(
-    (task) => task.data.location === "Lagos Mainland"
-  );
-
-  const content = (
-    <section>
-      <br />
-      {filteredTasks.map((task) => {
-        return (
-          <>
+  // Check if the decoded specified service is included in the task's services
+  return taskServices.includes(decodedService.toLowerCase());
+});
+  return (
+    <div className="max-w-[1440px] mx-auto   px-[6%] 2xl:px-0 pb-10">
+      {filteredTasks.length > 0 && (
+        <div className="z-[999] ">
+          {filteredTasks.map((task) => (
             <Link href={`/agency/${task.id}`} key={task.id}>
-              <div className="max-w-[1440px] mx-auto px-5 pb-10">
-                <h2 className="xl:text-[50px] text-[30px] border-b-[1px] border-black text-blue-400 mt-5">
-                  {task.data.name}
-                </h2>
+              <h2 className="xl:text-[50px] text-[30px] border-b-[1px] border-black mt-5">
+                {task.data.name}
+              </h2>
+              <h2 className="py-2 text-blue-700 flex w-full items-end justify-end">
                 <Link href="/business-directory"> Return to Directory</Link>
+              </h2>
+
+              <div className="flex items-center gap-2">
                 <div>
-                  <div className="flex xl:flex-row flex-col xl:items-center gap-5 xl:mt-10">
+                  <div className="flex xl:flex-row flex-col xl:items-start gap-5 xl:mt-10">
                     <div className="relative xl:w-[200px] w-[150px] h-[70px] ">
                       <Image
                         src={task.data.logoURL}
@@ -46,10 +53,13 @@ export default async function TasksPage() {
                         </h5>
                       </div>
                       <div className="flex leading-[24px]">
-                        <h5>
-                          <span className="font-bold">Services:</span>{" "}
-                          {task.data.services}
-                        </h5>
+                        <Link href="/">
+                          {" "}
+                          <h5>
+                            <span className="font-bold">Services:</span>{" "}
+                            {task.data.services}
+                          </h5>
+                        </Link>
                       </div>
                       <div className="flex leading-[30px]">
                         <h5>
@@ -95,11 +105,9 @@ export default async function TasksPage() {
                 </div>
               </div>
             </Link>
-          </>
-        );
-      })}
-    </section>
+          ))}
+        </div>
+      )}
+    </div>
   );
-
-  return content;
 }

@@ -1,95 +1,8 @@
-// import getAllTasks from "@/libs/getAllTask";
-// import { Metadata } from "next";
 
-// export const metadata: Metadata = {
-//   title: "List of Marketing Agencies in Lagos (Island)",
-//   description: "List of Marketing Agencies in Lagos (Island)",
-// };
-
-// export default async function TasksPage() {
-//   const tasksData: Promise<Task[]> = getAllTasks();
-//   const tasks = await tasksData;
-
-//   const filteredDesign = tasks.filter((task) =>
-//     task.data.services.split(",").includes("Design")
-//   );
-//   const contentMarketing = tasks.filter((task) =>
-//     task.data.services.split(",").includes("Content Marketing")
-//   );
-//   const filteredDigitalMarketinAgency = tasks.filter((task) =>
-//     task.data.services.split(",").includes("Digital Marketing Agencies")
-//   );
-//   const filteredDigitalAgency = tasks.filter((task) =>
-//     task.data.services.split(",").includes("Digital Marketing")
-//   );
-//   const filteredEmailMarketing = tasks.filter((task) =>
-//     task.data.services.split(",").includes("Email Marketing")
-//   );
-//   const filteredMobileDevelopment = tasks.filter((task) =>
-//     task.data.services.split(",").includes("Mobile Development")
-//   );
-//   const filteredMobileMarketing = tasks.filter((task) =>
-//     task.data.services.split(",").includes("Mobile Marketing")
-//   );
-//   const filteredOnlineReputation = tasks.filter((task) =>
-//     task.data.services.split(",").includes("Online Reputation Managemnet")
-//   );
-//   const filteredPayPerClick = tasks.filter((task) =>
-//     task.data.services.split(",").includes("Pay per Click Marketing")
-//   );
-//   const filteredDSearchEngineOptimization = tasks.filter((task) =>
-//     task.data.services.split(",").includes("Search Engine Optimization")
-//   );
-//   const filteredSocialMediaMarketing = tasks.filter((task) =>
-//     task.data.services.split(",").includes("Social Media Marketing")
-//   );
-//   const filteredWebsiteDevelopment = tasks.filter((task) =>
-//     task.data.services.split(",").includes("Website Development")
-//   );
-//   const filteredTraditionalServices = tasks.filter((task) =>
-//     task.data.services.split(",").includes("Traditional Services")
-//   );
-//   const filteredBoutique = tasks.filter((task) =>
-//     task.data.services.split(",").includes("Boutique")
-//   );
-//   const filteredExperimental = tasks.filter((task) =>
-//     task.data.services.split(",").includes("Experiential")
-//   );
-//   const filteredMedia = tasks.filter((task) =>
-//     task.data.services.split(",").includes("Media")
-//   );
-//   const filteredPublicRelation = tasks.filter((task) =>
-//     task.data.services.split(",").includes("Public Relations(PR)")
-//   );
-//   const content = (
-//     <section>
-//       <h5>Design: ({filteredDesign.length})</h5>
-//       <h5>Content Marketing: ({contentMarketing.length})</h5>
-//       <h5>
-//         Digital Marketing Agencies: ({filteredDigitalMarketinAgency.length})
-//       </h5>
-//       <h5>Digital Marketing: ({filteredDigitalAgency.length})</h5>
-//       <h5>Email Marketing: ({filteredEmailMarketing.length})</h5>
-//       <h5>Mobile Development: ({filteredMobileDevelopment.length})</h5>
-//       <h5>Mobile Marketing: ({filteredMobileMarketing.length})</h5>
-//       <h5>Online Reputation Managemnet: ({filteredOnlineReputation.length})</h5>
-//       <h5>Pay per Click Marketing: ({filteredPayPerClick.length})</h5>
-//       <h5>
-//         Search Engine Optimization: ({filteredDSearchEngineOptimization.length})
-//       </h5>
-//       <h5>Website Development: ({filteredWebsiteDevelopment.length})</h5>
-//       <h5>Traditional Services: ({filteredTraditionalServices.length})</h5>
-//       <h5>Boutique: ({filteredBoutique.length})</h5>
-//       <h5>Experiential: ({filteredExperimental.length})</h5>
-//       <h5>Media: ({filteredMedia.length})</h5>
-//       <h5>Public Relations(PR): ({filteredPublicRelation.length})</h5>
-//     </section>
-//   );
-
-//   return content;
-// }
 import { Metadata } from "next";
 import getAllTasks from "@/libs/getAllTask";
+import Link from "next/link";
+import Image from "next/image"
 
 export const metadata: Metadata = {
   title: "List of Marketing Agencies in Lagos (Island)",
@@ -111,13 +24,109 @@ export default async function TasksPage() {
     );
 
     const content = (
-      <section>
-        {allServices.map((service, index) => (
-          <h5 key={index}>{`${service}: (${filteredCounts[index].length})`}</h5>
-        ))}
+      <section className="max-w-[1440px] mx-auto   px-[6%] 2xl:px-0 pb-10">
+        <div className="my-20">
+          {allServices.map((service, index) => (
+            <Link key={index} href={`/${service}`}>
+              <h5>{`${service}: (${filteredCounts[index].length})`}</h5>
+            </Link>
+          ))}
+          <div>
+            {tasks.length > 0 && (
+              <div className="z-[999] ">
+                {tasks.map((task) => (
+                  <Link href={`/agency/${task.id}`} key={task.id}>
+                    <h2 className="xl:text-[50px] text-[30px] border-b-[1px] border-black mt-5">
+                      {task.data.name}
+                    </h2>
+                    <h2 className="py-2 text-blue-700 flex w-full items-end justify-end">
+                      Return to Directory
+                    </h2>
+
+                    <div className="flex items-center gap-2">
+                      <div>
+                        <div className="flex xl:flex-row flex-col xl:items-start gap-5 xl:mt-10">
+                          <div className="relative xl:w-[200px] w-[150px] h-[70px] ">
+                            <Image
+                              src={task.data.logoURL}
+                              layout="fill"
+                              objectFit="cover"
+                              alt="logo"
+                            />
+                          </div>
+
+                          <div className="flex sm:gap-3 flex-col xl:w-[80%] -mt-6 xk:mt-0">
+                            <div className="flex leading-[24px]">
+                              <h5>
+                                <span className="font-bold">
+                                  Business Name:
+                                </span>{" "}
+                                {task.data.name}
+                              </h5>
+                            </div>
+                            <div className="flex leading-[24px]">
+                              <Link href="/">
+                                {" "}
+                                <h5>
+                                  <span className="font-bold">Services:</span>{" "}
+                                  {task.data.services}
+                                </h5>
+                              </Link>
+                            </div>
+                            <div className="flex leading-[30px]">
+                              <h5>
+                                <span className="font-bold">About:</span>{" "}
+                                {task.data.about}
+                              </h5>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex xl:flex-row flex-col items-center gap-5 xl:mt-6okay  mt-3">
+                          <div className="relative w-[200px] h-[100px] sm:flex hidden"></div>
+                          <div className="mt-2 flex  gap-2 flex-col">
+                            <div className="flex leading-[24px]">
+                              <h5>
+                                <span className="font-bold">
+                                  Business Website Address:
+                                </span>{" "}
+                                {task.data.website}
+                              </h5>
+                            </div>
+                            <div className="flex leading-[24px] ">
+                              <h5>
+                                <span className="font-bold">
+                                  Business Phone Number
+                                </span>{" "}
+                                {task.data.phone_number}
+                              </h5>
+                            </div>
+                            <div className="flex leading-[23px]">
+                              <h5>
+                                <span className="font-bold">Location</span>{" "}
+                                {task.data.location}
+                              </h5>
+                            </div>
+                            <div className="flex leading-[24px] ">
+                              <h5>
+                                <span className="font-bold">
+                                  Business Address:
+                                </span>{" "}
+                                {task.data.address}
+                              </h5>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
       </section>
     );
-    console.log("tasksData:", tasksData);
+    
 
     return content;
  

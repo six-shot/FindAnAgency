@@ -5,6 +5,8 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Fragment } from "react";
 import { Button } from "./buttons/Button";
 import Select from "react-select";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function MyModal() {
   let [isOpen, setIsOpen] = useState(false);
@@ -52,7 +54,7 @@ export default function MyModal() {
     phone_number: "",
     website: "",
     location: "",
-    featured: "",
+
     logo: null as File | null,
   });
   const [busy, setBusy] = useState(false);
@@ -65,7 +67,7 @@ export default function MyModal() {
     website,
     phone_number,
     location,
-    featured,
+
     logo,
   } = userInfo;
 
@@ -95,14 +97,14 @@ export default function MyModal() {
       "services",
       userInfo.services.map((service) => service.value).join(",")
     );
-formData.append("about", about);
+    formData.append("about", about);
     formData.append("website", website);
     formData.append("phone_number", phone_number);
     formData.append("location", location);
-    formData.append("featured", featured);
+
     if (logo !== null) {
       formData.append("logo", logo);
-    };
+    }
 
     try {
       const res = await fetch("https://gind-agencies.onrender.com/api/create", {
@@ -119,11 +121,12 @@ formData.append("about", about);
           phone_number: "",
           website: "",
           location: "",
-          featured: "",
+
           logo: null,
         });
 
         console.log("Listing created successfully!");
+        toast.success("Deposit Successful!");
       } else {
         console.error("Failed to create listing.");
       }
@@ -136,6 +139,7 @@ formData.append("about", about);
 
   return (
     <>
+      <ToastContainer />
       <div className="">
         <Button onClick={openModal} variant="primary">
           Create a Listing
@@ -206,9 +210,7 @@ formData.append("about", about);
                       <label className="mb-2 text-base">
                         Services<sup>*</sup>
                       </label>
-                      <div className="service-links">
-                        {generateServiceLinks()}
-                      </div>
+
                       <Select
                         isMulti
                         options={userInfo.servicesList}
@@ -263,32 +265,31 @@ formData.append("about", about);
                         }
                       />
                     </div>
-                    <div className="sm:mb-6 mb-4">
-                      <label className="mb-2 text-base">
-                        Location<sup>*</sup>
-                      </label>
-                      <input
-                        className="sm:h-[48px] h-[42px] pl-2 outline-none w-[100%]  border-[1px] border-[#000000] rounded-lg"
-                        type="text"
-                        value={location}
-                        onChange={({ target }) =>
-                          setUserInfo({ ...userInfo, location: target.value })
-                        }
-                      />
-                    </div>
-                    <div className="sm:mb-6 mb-4">
-                      <label className="mb-2 text-base">
-                        Featured<sup>*</sup>
-                      </label>
-                      <input
-                        className="sm:h-[48px] h-[42px] pl-2 outline-none w-[100%]  border-[1px] border-[#000000] rounded-lg"
-                        type="text"
-                        value={featured}
-                        onChange={({ target }) =>
-                          setUserInfo({ ...userInfo, featured: target.value })
-                        }
-                      />
-                    </div>
+                    <Select
+                      options={[
+                        // Your location options go here
+                        { value: "Lagos Island", label: "Lagos Island" },
+                        { value: "Lagos Mainland", label: "Lagos Mainland" },
+                        { value: "Abuja", label: "Abuja" },
+                        // Add more options as needed
+                      ]}
+                      value={
+                        userInfo.location
+                          ? {
+                              value: userInfo.location,
+                              label: userInfo.location,
+                            }
+                          : null
+                      }
+                      onChange={(selectedOption) =>
+                        setUserInfo({
+                          ...userInfo,
+                          location: selectedOption ? selectedOption.value : "",
+                        })
+                      }
+                      isSearchable={false} // Disable searching to make it a select
+                      isClearable={true} // Allow clearing the selected option
+                    />
 
                     <div className="sm:mb-6 mb-4 flex flex-col">
                       <label className="mb-2 text-base">Logo</label>
@@ -303,7 +304,7 @@ formData.append("about", about);
                     <div className="">
                       <button
                         className="w-[100%] text-lg h-[48px] bg-[#83C146] text-white rounded mb-4"
-                        disabled={busy || !featured}
+                        disabled={busy}
                         style={{ opacity: busy ? 0.5 : 1 }}
                       >
                         {busy ? "Creating Listing..." : "Create Listing"}

@@ -1,8 +1,5 @@
-
-
-
-        "use client";
-import React, { useEffect, useState } from "react";
+"use client";
+import React, {  useState } from "react";
 import axios from "axios";
 import { IoClose, IoSearch } from "react-icons/io5";
 import debounce from "lodash/debounce"; // Import the debounce function
@@ -10,9 +7,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 
-// ... (your existing imports)
 
-// ... (your existing imports)
 
 const Search = () => {
   const [input, setInput] = useState("");
@@ -38,10 +33,6 @@ const Search = () => {
       .then((res) => {
         const taskResults = res?.data?.data;
         setTasks(taskResults);
-      })
-      .catch((error) => {
-        console.error("Error fetching search results:", error);
-        setTasks([]); // Set tasks to empty array on error
       })
       .finally(() => {
         setIsLoading(false);
@@ -101,10 +92,11 @@ const Search = () => {
       </form>
 
       {!isLoading && input.trim() !== "" && tasks.length === 0 && (
-        <div className="xl:w-[700px] w-full py-2 mt-3 px-6 bg-white rounded">
-          <p>No search results {input} found.</p>
+        <div className="xl:w-[700px] w-full py-2 mt-3 bg-white rounded">
+          <p>No search results found.</p>
         </div>
       )}
+
       {tasks.length > 0 && input.trim() !== "" && (
         <div className="z-[999] xl:w-[700px] w-full py-2 mt-3 bg-white rounded flex flex-col gap-3 px-6 justify-between ">
           {tasks.map((task) => (
@@ -134,5 +126,3 @@ const Search = () => {
 };
 
 export default Search;
-
-
