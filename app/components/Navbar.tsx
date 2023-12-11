@@ -46,12 +46,16 @@ export default function Navbar() {
                       className="flex  flex-col "
                       onClick={() => setIsOpen((prev) => !prev)}
                     >
-                      <h6 className="  hover:bg-blue-400 hover:text-white cursor-pointer border-l-transparent hover:border-l-white border-l-4 p-[1px]  w-[200px]">
-                        Digital Agencies
-                      </h6>
-                      <h6 className="hover:bg-blue-400 cursor-pointer hover:text-white border-l-transparent hover:border-l-white border-l-4 p-[1px]  w-[200px]">
-                        Traditional Agencies
-                      </h6>
+                      <Link href="/agency/industry/digital-agencies">
+                        <h6 className="hover:bg-blue-400 cursor-pointer hover:text-white border-l-transparent hover:border-l-white border-l-4 p-[1px]  w-[200px]">
+                          Digital Agencies
+                        </h6>
+                      </Link>
+                      <Link href="/agency/industry/traditional-agencies">
+                        <h6 className="hover:bg-blue-400 cursor-pointer hover:text-white border-l-transparent hover:border-l-white border-l-4 p-[1px]  w-[200px]">
+                          Traditional Agencies
+                        </h6>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -62,7 +66,9 @@ export default function Navbar() {
                 className="flex items-center gap-1   "
                 onClick={() => setIsOpen((prev) => !prev)}
               >
-                <h6 className="cursor-pointer font-nunito">Search By Location</h6>
+                <h6 className="cursor-pointer font-nunito">
+                  Search By Location
+                </h6>
                 {!isOpen ? (
                   <PiIcons.PiCaretDownBold />
                 ) : (
