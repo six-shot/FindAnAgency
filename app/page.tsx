@@ -6,9 +6,9 @@ import MyTabs from "./components/Tab";
 import FeauturedAgencies from "./components/FeauturedAgencies";
 import Ranking from "./components/Ranking";
 import AddAgency from "./components/AddAgency";
-interface HomeProps {
-  todos: Task[];
-}
+import Nav from "./components/Nav";
+
+
 export default function Home() {
   return (
     <main className="">
@@ -16,7 +16,7 @@ export default function Home() {
       <div className="mt-20 ">
         <MyTabs />
       </div>
-      <FeauturedAgencies  />
+      <FeauturedAgencies />
       <Ranking />
       <AddAgency />
     </main>

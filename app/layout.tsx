@@ -3,6 +3,7 @@ import { Nunito,Open_Sans,Playfair_Display,Poppins } from 'next/font/google'
 import './globals.css'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import Nav from './components/Nav'
 
 const nunito = Nunito({ subsets: ['latin'],
 weight:["200","300","400","500","600","700","800","900"],
@@ -37,7 +38,8 @@ export default function RootLayout({
       className={`${playfair.variable} ${nunito.variable} ${poppins.variable} ${opensans.variable}`}
     >
       <body>
-        <Navbar />
+   {/* <Navbar/> */}
+   <Nav/>
         {children}
         <Footer />
       </body>
