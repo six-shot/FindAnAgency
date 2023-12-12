@@ -10,7 +10,7 @@ const NavLinks = () => {
     <>
       {links.map((link) => (
         <div className="z-[999]" key={link.id}>
-          <div className="px-3 text-left md:cursor-pointer group  text-[#999999]">
+          <div className="px-3 text-left md:cursor-pointer group   text-[#999999]">
             <h1
               className="py-7 flex justify-between items-center md:pr-0 pr-5 group"
               onClick={() => {
@@ -30,7 +30,7 @@ const NavLinks = () => {
                           <li className="text-sm  text-[#999999]  hover:bg-red-500 px-6 my-2.5 " key={slink.id}>
                             <Link
                               href={slink.link}
-                              className="hover:text-primary  text-[18px"
+                              className="hover:text-primary  "
                             >
                               {slink.name}
                             </Link>
