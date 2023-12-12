@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react'
 
 export default function Footer() {
@@ -20,8 +21,12 @@ export default function Footer() {
           <div className="flex flex-col gap-6">
             <h5>Agencies</h5>
             <ul>
-              <li>Digital Agencies</li>
-              <li>Traditional Agencies</li>
+              <Link href="/agency/industry/digital-agencies">
+                <li>Digital Agencies</li>
+              </Link>
+              <Link href="/agency/industry/traditional-agencies">
+                <li>Traditional Agencies</li>
+              </Link>
             </ul>
           </div>
         </div>

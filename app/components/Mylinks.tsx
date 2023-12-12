@@ -1,171 +1,34 @@
 export const links = [
   {
-    name: "Men",
+    name: "Serach By Location",
     submenu: true,
     sublinks: [
       {
-        Head: "Topwear",
+        Head: "Location",
         sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-        ],
-      },
-      {
-        Head: "Bottomwear",
-        sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-        ],
-      },
-      {
-        Head: "innerwear",
-        sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-        ],
-      },
-
-      {
-        Head: "sleepwear",
-        sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-        ],
-      },
-      {
-        Head: "footwear",
-        sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
+          { name: "Abuja", link: "/" },
+          { name: "Anambra", link: "/" },
+          { name: "Lagos Island", link: "/agency/location/lagos-island" },
+          { name: "Lagos Mainland", link: "/agency/location/lagos-mainland" },
         ],
       },
     ],
   },
   {
-    name: "Women",
+    name: "Search By Industry",
     submenu: true,
     sublinks: [
       {
-        Head: "Topwear",
+        Head: "Industry",
         sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-        ],
-      },
-      {
-        Head: "Bottomwear",
-        sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-        ],
-      },
-      {
-        Head: "innerwear",
-        sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-        ],
-      },
-
-      {
-        Head: "sleepwear",
-        sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-        ],
-      },
-      {
-        Head: "footwear",
-        sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-        ],
-      },
-    ],
-  },
-  {
-    name: "Kid's",
-    submenu: true,
-    sublinks: [
-      {
-        Head: "Topwear",
-        sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-        ],
-      },
-      {
-        Head: "Bottomwear",
-        sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-        ],
-      },
-      {
-        Head: "innerwear",
-        sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-        ],
-      },
-
-      {
-        Head: "sleepwear",
-        sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-        ],
-      },
-      {
-        Head: "footwear",
-        sublink: [
-          { name: "T-shirt", link: "/" },
-          { name: "Casual shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
-          { name: "formal shirts", link: "/" },
+          {
+            name: "Digital Agencies",
+            link: "/agency/industry/digital-agencies",
+          },
+          {
+            name: "Traditional Agencies",
+            link: "/agency/industry/traditional-agencies",
+          },
         ],
       },
     ],

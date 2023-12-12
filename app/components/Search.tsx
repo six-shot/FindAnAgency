@@ -90,7 +90,7 @@ const Search = () => {
       <form onSubmit={(e) => searchTask(e)}>
         <div className="z-[999] xl:w-[700px] w-full h-[60px] rounded-[50px] bg-white flex px-6 justify-between items-center">
           <input
-            className="w-[100%] h-[100%] text-red-500 bg-transparent outline-none"
+            className="w-[100%] h-[100%]  bg-transparent outline-none"
             type="text"
             value={input}
             onChange={(e) => setInput(e.target.value)}
@@ -111,7 +111,7 @@ const Search = () => {
         </div>
       </form>
 
-      {noResult && <p>No results found. Use client.</p>}
+      {noResult && <p>No results found for {input} </p>}
 
       {tasks.length > 0 && (
         <div className="z-[999] xl:w-[700px] w-full py-2 mt-3 bg-white rounded flex flex-col gap-3 px-6 justify-between ">
