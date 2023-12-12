@@ -9,7 +9,7 @@ const NavLinks = () => {
   return (
     <>
       {links.map((link) => (
-        <div className="z-[999]">
+        <div className="z-[999]" key={link.id}>
           <div className="px-3 text-left md:cursor-pointer group  text-[#999999]">
             <h1
               className="py-7 flex justify-between items-center md:pr-0 pr-5 group"
@@ -25,9 +25,9 @@ const NavLinks = () => {
                 <div className="absolute top-20 hidden group-hover:md:block hover:md:block">
                   <div className="bg-white py-2  px-5 w-[250px] ">
                     {link.sublinks.map((mysublinks) => (
-                      <div>
+                      <div key={mysublinks.id}>
                         {mysublinks.sublink.map((slink) => (
-                          <li className="text-sm  text-[#999999]  hover:bg-red-500 px-6 my-2.5 ">
+                          <li className="text-sm  text-[#999999]  hover:bg-red-500 px-6 my-2.5 " key={slink.id}>
                             <Link
                               href={slink.link}
                               className="hover:text-primary  text-[18px"
@@ -51,7 +51,7 @@ const NavLinks = () => {
           >
             {/* sublinks */}
             {link.sublinks.map((slinks) => (
-              <div>
+              <div key={slinks.id}>
                 <div>
                   <h1
                     onClick={() =>
@@ -69,7 +69,7 @@ const NavLinks = () => {
                     }`}
                   >
                     {slinks.sublink.map((slink) => (
-                      <li className="py-3 pl-14">
+                      <li className="py-3 pl-14" key={slink.id}>
                         <Link href={slink.link}>{slink.name}</Link>
                       </li>
                     ))}
