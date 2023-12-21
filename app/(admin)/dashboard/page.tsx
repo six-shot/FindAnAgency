@@ -24,11 +24,11 @@ export default async function page() {
       <br />
       {filteredTasks.map((task) => {
         return (
-          <div className="max-w-[1440px] mx-auto" >
+          <div className="max-w-[1440px] mx-auto" key={task.id}>
             <h3 className="uppercase font-bold font-nunito py-5 text-[20px]">
               All Pending Agencies
             </h3>
-            <Link href={`/update/${task.id}`} key={task.id}>
+            <Link href={`/update/${task.id}`}>
               <div className="max-w-[1440px] mx-auto px-5 pb-10">
                 <div className="flex justify-between items-center">
                   <h2 className="font-bold font-nunito py-5 text-[20px] ">
