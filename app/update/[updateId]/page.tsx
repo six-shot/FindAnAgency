@@ -1,6 +1,6 @@
 "use client"
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect,FormEventHandler } from "react";
 import type { Metadata } from "next";
 import getUpdate from "@/libs/getUpdate";
 
@@ -40,13 +40,13 @@ export default function Page({ params: { updateId } }: Params) {
     fetchTask();
   }, [updateId]);
 
-  const handleStatusInput = (event) => {
-    // Only update the status field in the state
-    setAgency({ ...agency, status: event.target.value });
-  };
+  // const handleStatusInput: FormEventHandler<HTMLFormElement> = (event) => {
+  //   // Only update the status field in the state
+  //   setAgency({ ...agency, status: event.target.value });
+  // };
 
- const handleSubmit = (e) => {
-  setLoading(true);
+ const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
+   setLoading(true);
    e.preventDefault();
    axios
      .patch(
