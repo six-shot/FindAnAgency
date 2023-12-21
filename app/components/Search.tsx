@@ -44,7 +44,7 @@ const handleSearch = async () => {
             setNoResult(false);
 
             // Filter results based on closeness to the input
-            const filteredResults = taskResults.filter((task) =>
+            const filteredResults = taskResults.filter((task:Task) =>
               task.name.toLowerCase().includes(searchTask.toLowerCase())
             );
 
