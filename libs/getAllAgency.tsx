@@ -1,8 +1,6 @@
-
-
-export default async function getAllTasks() {
+export default async function getAllAgency() {
   const res = await fetch(
-    "https://gind-agencies.onrender.com/api/approved_agency",
+    "https://gind-agencies.onrender.com/api/agency",
     {
       next: {
         revalidate: 0,
@@ -16,6 +14,5 @@ export default async function getAllTasks() {
 
   const data = responseData.data;
   console.log(data);
-    return data;
+  return data;
 }
-

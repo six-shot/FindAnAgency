@@ -28,7 +28,12 @@ export default async function TasksPage() {
                 <h2 className="xl:text-[50px] text-[30px] border-b-[1px] border-black text-blue-400 mt-5">
                   {task.data.name}
                 </h2>
-                <Link href="/business-directory"> Return to Directory</Link>
+                <Link href="/business-directory">
+                  {" "}
+                  <h2 className="py-2 text-blue-700 flex w-full items-end justify-end">
+                    Return to Directory
+                  </h2>
+                </Link>
                 <div>
                   <div className="flex xl:flex-row flex-col xl:items-center gap-5 xl:mt-10">
                     <div className="relative xl:w-[200px] w-[150px] h-[70px] ">

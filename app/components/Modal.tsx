@@ -125,8 +125,8 @@ export default function MyModal() {
           logo: null,
         });
 
-        console.log("Listing created successfully!");
-        toast.success("Deposit Successful!");
+       
+        toast.success("Listing Pending!");
       } else {
         console.error("Failed to create listing.");
       }

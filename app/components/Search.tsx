@@ -18,52 +18,59 @@ const Search = () => {
 
   useEffect(() => {
     // Define a function to handle the search logic
-    const handleSearch = async () => {
-      setIsLoading(true);
+ 
+const handleSearch = async () => {
+  setIsLoading(true);
 
-      // Use the input value directly instead of searchParams
-      let searchTask = input;
+  // Use the input value directly instead of searchParams
+  let searchTask = input;
 
-      const getSearchedTask = async () => {
-        if (searchTask) {
-          console.log("searches");
+  const getSearchedTask = async () => {
+    if (searchTask) {
+      console.log("searches");
 
-          await axios
-            .get(`https://gind-agencies.onrender.com/api/search?`, {
-              params: {
-                search: searchTask,
-              },
-            })
-            .then((res) => {
-              const taskResults = res?.data?.data;
-              console.log(res.data);
-              if (taskResults.length === 0 || taskResults === undefined) {
-                setNoResult(true);
-              } else {
-                setNoResult(false);
-                setTasks(taskResults);
-              }
-            })
-            .catch((error) => {
-              console.error(error);
+      await axios
+        .get(`https://gind-agencies.onrender.com/api/search?`, {
+          params: {
+            search: searchTask,
+          },
+        })
+        .then((res) => {
+          const taskResults = res?.data?.data;
+          console.log(res.data);
+          if (taskResults.length === 0 || taskResults === undefined) {
+            setNoResult(true);
+          } else {
+            setNoResult(false);
 
-              setNoResult(true);
-            })
-            .finally(() => {
-              setIsLoading(false);
-            });
-        } else {
-          // If no search task is present, you can set your dummy data here
-          setTasks([]);
+            // Filter results based on closeness to the input
+            const filteredResults = taskResults.filter((task) =>
+              task.name.toLowerCase().includes(searchTask.toLowerCase())
+            );
+
+            setTasks(filteredResults);
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+
+          setNoResult(true);
+        })
+        .finally(() => {
           setIsLoading(false);
+        });
+    } else {
+      // If no search task is present, you can set your dummy data here
+      setTasks([]);
+      setIsLoading(false);
 
-          router.push("/");
-        }
-      };
+      router.push("/");
+    }
+  };
 
-      // Call the search function
-      getSearchedTask();
-    };
+  // Call the search function
+  getSearchedTask();
+};
 
     // Use a timeout to delay the search and avoid unnecessary API calls on each keystroke
     const timeoutId = setTimeout(handleSearch, 500);
@@ -118,15 +125,17 @@ const Search = () => {
           {tasks.map((task) => (
             <Link href={`/agency/${task.id}`} key={task.id}>
               <div className="flex items-center gap-2">
-                <div className="w-[300px] h-[60px]">
-                  <Image
-                    src={task.logoURL}
-                    alt="logo"
-                    width={300}
-                    height={60}
-                  />
+                <div className="w-[20%]">
+                  <div className="relative w-[100px]  h-[60px]">
+                    <Image
+                      src={task.logoURL}
+                      alt="logo"
+                     fill={true}
+                     objectFit="contain"
+                    />
+                  </div>
                 </div>
-                <div className="">
+                <div className="w-[80%]">
                   <h5 className="text-sm text-blue-700 font-medium font-nunito">
                     {task.name}
                   </h5>

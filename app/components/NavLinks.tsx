@@ -27,7 +27,7 @@ const NavLinks = () => {
                     {link.sublinks.map((mysublinks) => (
                       <div key={mysublinks.id}>
                         {mysublinks.sublink.map((slink) => (
-                          <li className="text-sm  text-[#999999]  hover:bg-red-500 px-6 my-2.5 " key={slink.id}>
+                          <li className="text-sm  text-[#999999]  hover:bg-blue-200 px-6  py-[3px] " key={slink.id}>
                             <Link
                               href={slink.link}
                               className="hover:text-primary  "

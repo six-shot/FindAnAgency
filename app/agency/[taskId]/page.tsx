@@ -145,8 +145,8 @@ export default async function UserPage({ params: { taskId } }: Params) {
             <div className="relative xl:w-[200px] w-[150px] h-[70px] ">
               <Image
                 src={task.logoURL}
-                layout="fill"
-                objectFit="cover"
+                fill={true}
+                objectFit="contain"
                 alt="logo"
               />
             </div>
