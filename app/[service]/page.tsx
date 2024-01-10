@@ -9,20 +9,24 @@ type Params = {
 };
 
 export default async function page({ params: { service } }: Params) {
+  
   const tasksData: Promise<Task[]> = getAllTasks();
-const tasks = await tasksData;
-const decodedService = decodeURIComponent(service); // Decode the URL-encoded service parameter
-const filteredTasks = tasks.filter((task) => {
-  const taskServices = task.data.services
-    .split(",")
-    .map((s) => s.trim().toLowerCase());
+  const tasks = await tasksData;
+  const decodedService = decodeURIComponent(service); // Decode the URL-encoded service parameter
+  const cleanedService = decodedService.replace(/%/g, ""); // Remove percent signs
+  const filteredTasks = tasks.filter((task) => {
+    const taskServices = task.data.services
+      .split(",")
+      .map((s) => s.trim().toLowerCase());
 
-  // Check if the decoded specified service is included in the task's services
-  return taskServices.includes(decodedService.toLowerCase());
-});
+    // Check if the decoded specified service is included in the task's services
+    return taskServices.includes(decodedService.toLowerCase());
+  });
   return (
     <div className="max-w-[1440px] mx-auto   px-[6%] 2xl:px-0 pb-10">
-      {filteredTasks.length > 0 && (
+      <h3 className="text-[30px] pt-20 font-bold font-nunito">{cleanedService}</h3>
+    
+      <div>Business Name</div>  {filteredTasks.length > 0 && (
         <div className="z-[999] ">
           {filteredTasks.map((task) => (
             <Link href={`/agency/${task.id}`} key={task.id}>

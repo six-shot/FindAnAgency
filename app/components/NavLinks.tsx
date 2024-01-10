@@ -10,9 +10,9 @@ const NavLinks = () => {
     <>
       {links.map((link) => (
         <div className="z-[999]" key={link.id}>
-          <div className="px-3 text-left md:cursor-pointer group   text-[#999999]">
+          <div className=" text-left md:cursor-pointer group  text-xs text-[#2F2F2F]  ">
             <h1
-              className="py-7 flex justify-between items-center md:pr-0 pr-5 group"
+              className="py-7  flex justify-between items-center md:pr-0 pr-5 group"
               onClick={() => {
                 heading !== link.name ? setHeading(link.name) : setHeading("");
                 setSubHeading("");
@@ -27,7 +27,10 @@ const NavLinks = () => {
                     {link.sublinks.map((mysublinks) => (
                       <div key={mysublinks.id}>
                         {mysublinks.sublink.map((slink) => (
-                          <li className="text-sm  text-[#999999]  hover:bg-blue-200 px-6  py-[3px] " key={slink.id}>
+                          <li
+                            className="text-xs text-[#2F2F2F]   hover:bg-blue-200 px-6  py-[3px] "
+                            key={slink.id}
+                          >
                             <Link
                               href={slink.link}
                               className="hover:text-primary  "

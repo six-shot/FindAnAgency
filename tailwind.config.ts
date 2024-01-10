@@ -9,10 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily:{
-        nunito:['var(--font-nunito)'],
-        playfair:['var(--font-playfair)'],
-        poppins:['var(--font-poppins)'],
-        opensans:['var(--font-opensans)']
+        silka:['var(--font-silka)'],
+       
       },
     },
   },

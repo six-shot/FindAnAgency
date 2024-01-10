@@ -1,7 +1,7 @@
 export const links = [
   {
     id: "1",
-    name: "Serach By Location",
+    name: "Search By Location",
     submenu: true,
     sublinks: [
       {

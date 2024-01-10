@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -10,9 +11,11 @@ import Nav from "./components/Nav";
 
 
 export default function Home() {
+ 
   return (
     <main className="">
       <Hero />
+
       <div className="mt-20 ">
         <MyTabs />
       </div>

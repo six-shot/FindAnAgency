@@ -7,25 +7,25 @@ import Image from "next/image";
 const Nav = () => {
   const [open, setOpen] = useState(false);
   return (
-    <nav className="bg-white">
+    <nav className="bg-transparent font-mont">
       <div className="flex items-center text-[18px] justify-between h-24 max-w-[1440px] mx-auto border-b border-gray-300 ">
         <Link href="/">
           <Image src={logo} className="xl:w-[200px] w-[180px]" alt="logo" />
         </Link>
         <ul className="md:flex hidden  items-center gap-3  text-[#999999]">
           <li>
-            <Link href="/" className="py-7 px-3 inline-block">
+            <Link href="/" className="py-7 px-3 inline-block text-base">
               Home
             </Link>
           </li>
           <NavLinks />
           <li>
-            <Link href="/" className="py-7 px-3 inline-block">
+            <Link href="/" className="py-7 px-3 inline-block text-base">
               Blog
             </Link>
           </li>{" "}
           <li>
-            <Link href="/" className="py-7 px-3 inline-block">
+            <Link href="/" className="py-7 px-3 inline-block text-base">
               Contact Us
             </Link>
           </li>
