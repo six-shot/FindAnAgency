@@ -49,12 +49,15 @@ function Hero() {
         </div>
         <div className=""></div>
         <div className="  flex w-full h-full justify-center flex-col items-center ">
-          <h1 className="silka font-bold xl:text-[56px] text-[40px] text-center leading-[46px] z-50">
-            Unlock Endless Energy
+          <h1 className="font-silka font-bold xl:text-[56px] capitalize text-[40px]  text-center leading-[56px] z-50">
+            The most comprehensive listing of <br /> marketing agencies in
+            Nigeria
           </h1>
           <p className="text-white silka xl:w-[700px]  font-medium text-center mt-10 z-50">
-            Energy storage is the missing link in the sustainable energy system.
-            Our mission is to unlock endless energy.
+            This comprehensive resource serves as a valuable directory for
+            businesses seeking specialized marketing services, offering a broad
+            spectrum of agencies with varying expertise, ensuring a one-stop
+            reference for navigating the dynamic marketing landscape in Nigeria.
           </p>
         </div>
       </div>

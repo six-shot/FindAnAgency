@@ -41,10 +41,12 @@ function Navbar() {
                   </ul>
                 </nav>
                 <div className="flex items-center xl:gap-14 gap-5">
-                  <button className="sm:flex hidden text-xs py-3.5 px-10 font-silka font-medium text-white bg-[#000] rounded-[50px]">
-                    Add  Listing
+                  <button className="sm:flex hidden text-xs py-3.5 px-10 font-silka font-medium text-white bg-[#192dad] rounded-[50px]">
+                    Add Listing
                   </button>
-                  <IconContext.Provider value={{ size: "25px" }}>
+                  <IconContext.Provider
+                    value={{ size: "25px", color: "#192dad" }}
+                  >
                     <FiSearch onClick={handleToggle} />
                   </IconContext.Provider>
                   <IconContext.Provider value={{ size: "25px" }}>
@@ -59,17 +61,20 @@ function Navbar() {
                 }  sidebar`}
               >
                 <div className="flex sm:gap-12 gap-2 items-center w-full h-full ">
-                  <div className="w-[75vw]  border-[1px] border-[#F3F3F3] h-[45px] rounded-[50px] ">
+                  <div className="w-[75vw]  border-[1px] border-[#192dad] outline-none h-[45px] rounded-[50px] ">
                     <input
-                      className="w-full h-full px-2 rounded-[50px]"
+                      className="w-full h-full px-2 rounded-[50px] font-silka placeholder:text-[#192dad] placeholder:text-xs pl-5"
                       type="text"
+                      placeholder="Search a listing"
                     />
                   </div>
                   <div className="flex items-center gap-3 sm:gap-14">
-                    <button className="text-xs py-3.5 px-8 font-silka font-medium text-white bg-[#000] rounded-[50px]">
+                    <button className="text-xs py-3.5 px-8 font-silka font-medium text-white bg-[#192dad] rounded-[50px]">
                       Search
                     </button>
-                    <IconContext.Provider value={{ size: "25px" }}>
+                    <IconContext.Provider
+                      value={{ size: "25px", color: "#192dad" }}
+                    >
                       <AiOutlineClose onClick={handleToggle} />
                     </IconContext.Provider>
                   </div>
