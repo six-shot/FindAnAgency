@@ -72,7 +72,7 @@ export default function Page({ params: { updateId } }: Params) {
 
   return (
     <>
-      <div className="max-w-[1440px] mx-auto pb-5">
+      <div className="max-w-[1440px] mx-auto pb-5 mt-[5%]">
         <h3 className="uppercase font-bold font-nunito py-5 text-[20px]">
           Pending Agencies
         </h3>

@@ -35,7 +35,7 @@ import React from "react";
 function Hero() {
   return (
     <div className="h-screen ">
-      <div className="h-[90vh] relative w-full  bg-black text-white  ">
+      <div className="h-[100vh] relative w-full  bg-black text-white  ">
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden bg-black">
           <video
             className="min-h-full min-w-full absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] object-cover"
@@ -43,17 +43,17 @@ function Hero() {
             loop
             muted
           >
-            <source src="bg.mp4" type="video/mp4"></source>
+            <source src="bg1.mp4" type="video/mp4"></source>
           </video>
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
         </div>
         <div className=""></div>
         <div className="  flex w-full h-full justify-center flex-col items-center ">
-          <h1 className="font-silka font-bold xl:text-[56px] capitalize text-[26px] px-[5%]   text-center xl:leading-[56px] leading-[32px] z-50">
-            The most comprehensive listing of <br className="xl:flex hidden" />{" "}
+          <h1 className="font-silka font-bold xl:text-[56px] capitalize text-[26px] px-[5%]   text-center xl:leading-[56px] mt-[10%] leading-[32px] z-50">
+            The most comprehensive listing of <br className="sm:flex hidden" />{" "}
             marketing agencies in Nigeria
           </h1>
-          <p className="text-white silka xl:w-[700px] xl:text-base text-sm px-[5%]  font-medium text-center xl:my-10 my-5  z-50">
+          <p className="text-white silka sm:w-[700px] xl:text-base text-sm px-[5%]  font-medium text-center xl:my-10 my-5  z-50">
             This comprehensive resource serves as a valuable directory for
             businesses seeking specialized marketing services, offering a broad
             spectrum of agencies with varying expertise, ensuring a one-stop

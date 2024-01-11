@@ -8,6 +8,11 @@ import FeauturedAgencies from "./components/FeauturedAgencies";
 import Ranking from "./components/Ranking";
 import AddAgency from "./components/AddAgency";
 import Nav from "./components/Nav";
+import Explore from "./components/Explore";
+import Example from "./components/HorizontalScroll";
+import Working from "./components/Working";
+
+
 
 
 export default function Home() {
@@ -15,12 +20,15 @@ export default function Home() {
   return (
     <main className="">
       <Hero />
-
+<Explore/>
       <div className="mt-20 ">
         <MyTabs />
       </div>
+      {/* <Example/> */}
+    
       <FeauturedAgencies />
-      <Ranking />
+      <Working/>
+      {/* <Ranking /> */}
       <AddAgency />
     </main>
   );

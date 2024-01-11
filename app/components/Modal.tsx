@@ -271,6 +271,8 @@ export default function MyModal() {
                         { value: "Lagos Island", label: "Lagos Island" },
                         { value: "Lagos Mainland", label: "Lagos Mainland" },
                         { value: "Abuja", label: "Abuja" },
+                        { value: "Ibadan", label: "Ibadan" },
+                        { value: "Kano", label: "Kano" },
                         // Add more options as needed
                       ]}
                       value={

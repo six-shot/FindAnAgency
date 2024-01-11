@@ -45,7 +45,7 @@ export const Button = ({
         !paddingLess && "sm:px-7 sm:py-2 px-2 py-1  text-sm"
       }  ${
         !square && "rounded sm:rounded-[5px]"
-      } active:scale-95 ${className} font-opensans`}
+      } active:scale-95 ${className} font-silka`}
     >
       {children}
     </button>

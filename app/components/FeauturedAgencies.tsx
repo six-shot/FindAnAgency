@@ -31,7 +31,7 @@ export default function FeaturedAgencies() {
     >
       <div className="max-w-[1440px] mx-auto  px-[6%] 2xl:px-0">
         <div className="flex justify-center items-center flex-col gap-10">
-          <h2 className="text-[#444444c7] font-medium font-poppins text-[27px] text-center px-4 ">
+          <h2 className="text-[#000000] font-medium uppercase  font-silka text-[36px] text-center px-4 ">
             Featured Agencies In Nigeria
           </h2>
           <div className="grid sm:grid-cols-3 grid-cols-1 w-full space-y-10 space-x-5">
@@ -51,10 +51,10 @@ export default function FeaturedAgencies() {
                         className="object-cover w-full h-full"
                       />
                     </div>
-                    <h4 className="text-[#302f2fc7] text-[20px] mt-7 my-2 font-semibold font-nunito">
+                    <h4 className="text-[#302f2fc7] text-[20px] mt-7 my-2 font-semibold font-silka">
                       {navLink.name}
                     </h4>
-                    <p className="text-[#444444c7] line-clamp-3 font-nunito">
+                    <p className="text-[#444444c7] line-clamp-3 font-silka">
                       {navLink.about}
                     </p>
                   </motion.div>
