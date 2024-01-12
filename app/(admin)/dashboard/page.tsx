@@ -20,15 +20,15 @@ export default async function page() {
   );
 
   const content = (
-    <section>
-      <h3 className="uppercase font-bold font-nunito py-5 text-[20px]">
+    <section className="mt-[10%]">
+      <h3 className="uppercase font-bold font-nunito py-5 text-[20px] max-w-[1440px] mx-auto ">
         All Pending Agencies
       </h3>
       {filteredTasks.map((task) => {
         return (
-          <div className="max-w-[1440px] mx-auto mt-[5%]" key={task.id}>
+          <div className="max-w-[1440px] mx-auto " key={task.id}>
             <Link href={`/update/${task.id}`}>
-              <div className="max-w-[1440px] mx-auto px-5 pb-10">
+              <div className="max-w-[1440px] mx-auto ">
                 <div className="flex justify-between items-center">
                   <h2 className="font-bold font-nunito py-5 text-[20px] ">
                     {task.data.name}
