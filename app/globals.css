@@ -98,3 +98,10 @@
   font-size: var(--headlineMedium);
   text-transform: uppercase;
 }
+
+
+.container{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+}

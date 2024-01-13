@@ -12,6 +12,8 @@ import Explore from "./components/Explore";
 import Example from "./components/HorizontalScroll";
 import Working from "./components/Working";
 import Product from "./components/Product";
+import Products2 from "./components/Products2";
+import Services from "./components/Services";
 
 
 
@@ -21,15 +23,13 @@ export default function Home() {
   return (
     <main className="">
       <Hero />
-<Explore/>
-      <div className="mt-20 ">
-        {/* <MyTabs /> */}
-      </div>
+      <Explore />
+      <div className="mt-20 ">{/* <MyTabs /> */}</div>
       {/* <Example/> */}
-    
+      <Services/>
       <FeauturedAgencies />
-      <Product/>
-      <Working/>
+
+      <Working />
       {/* <Ranking /> */}
       <AddAgency />
     </main>

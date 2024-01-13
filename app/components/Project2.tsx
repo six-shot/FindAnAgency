@@ -1,9 +1,8 @@
 "use client";
 import React, { useState, Dispatch, SetStateAction } from "react";
-import styles from "./style.module.scss";
-import Titles from "../projects/titles/index";
-import Descriptions from "../projects/description/index";
 
+import Titles from "./category/projects/titles";
+import Descriptions from "./category/projects/description";
 
 
 const data = [
@@ -36,7 +35,7 @@ const data = [
     description:
       "Designed a 1M+ users product utilizing my best personal experience: sleeping.",
     speed: 0.8,
-  }
+  },
   // {
   //   title: "mobile devlopment",
   //   description:
@@ -105,11 +104,12 @@ const data = [
   // },
 ];
 
-export default function Projects() {
+export default function Projects2() {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
 
   return (
     <div className='container'>
+      
       <Titles data={data} setSelectedProject={setSelectedProject} />
       <Descriptions data={data} selectedProject={selectedProject} />
     </div>
