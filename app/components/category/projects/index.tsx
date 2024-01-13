@@ -36,73 +36,73 @@ const data = [
     description:
       "Designed a 1M+ users product utilizing my best personal experience: sleeping.",
     speed: 0.8,
-  }
-  // {
-  //   title: "mobile devlopment",
-  //   description:
-  //     "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
-  //   speed: 0.8,
-  // },
-  // {
-  //   title: "mobile marketing",
-  //   description:
-  //     "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
-  //   speed: 0.8,
-  // },
-  // {
-  //   title: "Online reputation marketing",
-  //   description:
-  //     "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
-  //   speed: 0.8,
-  // },
-  // {
-  //   title: "pay per click marketing",
-  //   description:
-  //     "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
-  //   speed: 0.8,
-  // },
-  // {
-  //   title: "Serach Engine Optimization",
-  //   description:
-  //     "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
-  //   speed: 0.8,
-  // },
-  // {
-  //   title: "website developement",
-  //   description:
-  //     "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
-  //   speed: 0.8,
-  // },
-  // {
-  //   title: "traditional services",
-  //   description:
-  //     "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
-  //   speed: 0.8,
-  // },
-  // {
-  //   title: "boutique",
-  //   description:
-  //     "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
-  //   speed: 0.8,
-  // },
-  // {
-  //   title: "expiential",
-  //   description:
-  //     "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
-  //   speed: 0.8,
-  // },
-  // {
-  //   title: "media",
-  //   description:
-  //     "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
-  //   speed: 0.8,
-  // },
-  // {
-  //   title: "public relation(pr)",
-  //   description:
-  //     "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
-  //   speed: 0.8,
-  // },
+  },
+  {
+    title: "mobile devlopment",
+    description:
+      "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
+    speed: 0.97,
+  },
+  {
+    title: "mobile marketing",
+    description:
+      "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
+    speed: 0.8,
+  },
+  {
+    title: "Online reputation marketing",
+    description:
+      "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
+    speed: 0.8,
+  },
+  {
+    title: "pay per click marketing",
+    description:
+      "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
+    speed: 0.8,
+  },
+  {
+    title: "Serach Engine Optimization",
+    description:
+      "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
+    speed: 0.8,
+  },
+  {
+    title: "website developement",
+    description:
+      "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
+    speed: 0.8,
+  },
+  {
+    title: "traditional services",
+    description:
+      "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
+    speed: 0.8,
+  },
+  {
+    title: "boutique",
+    description:
+      "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
+    speed: 0.8,
+  },
+  {
+    title: "expiential",
+    description:
+      "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
+    speed: 0.8,
+  },
+  {
+    title: "media",
+    description:
+      "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
+    speed: 0.8,
+  },
+  {
+    title: "public relation(pr)",
+    description:
+      "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
+    speed: 0.8,
+  },
 ];
 
 export default function Projects() {

@@ -26,7 +26,7 @@ export default function Home() {
       <Explore />
       <div className="mt-20 ">{/* <MyTabs /> */}</div>
       {/* <Example/> */}
-      <Services/>
+    <Product/>
       <FeauturedAgencies />
 
       <Working />
