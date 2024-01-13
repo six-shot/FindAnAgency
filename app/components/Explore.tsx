@@ -5,7 +5,7 @@ import Image from "next/image";
 function Explore() {
   return (
     <div>
-      <div className="w-full flex flex-col justify-center items-center text-center mt-10 px-6 ">
+      <div className="w-full flex flex-col justify-center items-center text-center my-[5%] px-6 ">
         <h3 className="sm:text-[40px] text-[30px] sm:leading-[45px] leading-[40px] font-bold silka">
           Trusted and Comprehensive <br /> Agencies
         </h3>

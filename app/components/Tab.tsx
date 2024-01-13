@@ -11,13 +11,13 @@ function MyTabs() {
     <div className="max-w-[1440px] mx-auto">
       <Tab.Group>
         <div className="">
-          <Tab.List className="flex justify-center items-center mb-[33px] w-[100%] border-b border-gray-300 font-nunito">
+          <Tab.List className="flex justify-center items-center mb-[33px] w-[100%]  font-silka">
             <Tab as={Fragment}>
               {({ selected }) => (
                 <div
                   className={
                     selected
-                      ? "py-4  px-6  text-white bg-blue-700 rounded-t-[4px] flex justify-center items-center flex-col "
+                      ? "py-4  px-6  text-[#192dad] border-b-[1px] border-[#192dad]  flex justify-center items-center flex-col "
                       : "px-5 py-4 text-gray-500 rounded-t-[4px]  text-base flex justify-center items-center flex-col "
                   }
                 >
@@ -31,7 +31,7 @@ function MyTabs() {
                 <div
                   className={
                     selected
-                      ? "py-4  px-6 text-white  bg-blue-700 rounded-t-[4px] flex justify-center items-center flex-col "
+                      ? "py-4  px-6 text-[#192dad] border-b-[1px] border-[#192dad] flex justify-center items-center flex-col "
                       : "px-5 py-4 text-gray-500 rounded-t-[4px]  text-base flex justify-center items-center flex-col "
                   }
                 >
@@ -47,7 +47,7 @@ function MyTabs() {
             <DigitalSevices />
           </Tab.Panel>
           <Tab.Panel>
-   <TraditionalServices/>
+            <TraditionalServices />
           </Tab.Panel>
         </Tab.Panels>
       </Tab.Group>

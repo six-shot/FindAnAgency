@@ -40,9 +40,9 @@ export default function FeaturedAgencies() {
                 <Link href={`/agency/${navLink.id}`} key={navLink.id}>
                   <motion.div
                     variants={fadeIn("up", "tween", 0.2, 1)}
-                    className="bg-[#e1e4f7] hover:bg-[#ffffff34] p-3  rounded-sm"
+                    className="bg-[#e1e4f7] p-3  rounded-sm"
                   >
-                    <div className="w-[250px] h-[100px] bg-[#e1e4f7] shadow-2xl">
+                    <div className="w-[250px] h-[100px] bg-[#e1e4f7] ">
                       <Image
                         src={navLink.logo}
                         width={600}

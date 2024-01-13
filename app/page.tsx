@@ -11,6 +11,7 @@ import Nav from "./components/Nav";
 import Explore from "./components/Explore";
 import Example from "./components/HorizontalScroll";
 import Working from "./components/Working";
+import Product from "./components/Product";
 
 
 
@@ -22,11 +23,12 @@ export default function Home() {
       <Hero />
 <Explore/>
       <div className="mt-20 ">
-        <MyTabs />
+        {/* <MyTabs /> */}
       </div>
       {/* <Example/> */}
     
       <FeauturedAgencies />
+      <Product/>
       <Working/>
       {/* <Ranking /> */}
       <AddAgency />

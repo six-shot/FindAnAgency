@@ -8,6 +8,7 @@ import NavLinks from "./NavLinks";
 import Link from "next/link";
 import logo from "@/public/top-logo-for-find-an-agency-blackk.png";
 import Image from "next/image";
+import Search from "@/app/components/Search"
 function Navbar() {
   const [toggle, setToggle] = useState(true);
   const handleToggle = () => {
@@ -60,18 +61,19 @@ function Navbar() {
                   toggle ? "hidden" : "flex w-full justify-between items-center"
                 }  sidebar`}
               >
-                <div className="flex sm:gap-12 gap-2 items-center w-full h-full ">
-                  <div className="w-[75vw]  border-[1px] border-[#192dad] outline-none h-[45px] rounded-[50px] ">
+                <div className="flex justify-between items-center w-full h-full ">
+                  {/* <div className="w-[75vw]  border-[1px] border-[#192dad] outline-none h-[45px] rounded-[50px] ">
                     <input
                       className="w-full h-full px-2 rounded-[50px] font-silka placeholder:text-[#192dad] placeholder:text-xs pl-5"
                       type="text"
                       placeholder="Search a listing"
                     />
-                  </div>
+                  </div> */}
+                  <Search/>
                   <div className="flex items-center gap-3 sm:gap-14">
-                    <button className="text-xs py-3.5 px-8 font-silka font-medium text-white bg-[#192dad] rounded-[50px]">
+                    {/* <button className="text-xs py-3.5 px-8 font-silka font-medium text-white bg-[#192dad] rounded-[50px]">
                       Search
-                    </button>
+                    </button> */}
                     <IconContext.Provider
                       value={{ size: "25px", color: "#192dad" }}
                     >
