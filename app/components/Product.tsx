@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 
 import Projects from "./category/projects";
 import SmoothScroll from "./category/smoothscroll";
-import Projects2 from "./Project2";
+
 
 
 // const Earth = dynamic(() => import('@/components/earth'), {
@@ -18,7 +18,7 @@ export default function Product() {
       <main className="h-[175vh]">
     <h3 className="uppercase font-silka font-bold text-[30px] text-center mb-10 mt-5">Services available</h3>
         <Projects />
-        <Projects2/>
+        
       </main>
     </SmoothScroll>
   );

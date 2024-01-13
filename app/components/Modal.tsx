@@ -141,9 +141,13 @@ export default function MyModal() {
     <>
       <ToastContainer />
       <div className="">
-        <Button onClick={openModal} variant="primary">
-          Create a Listing
-        </Button>
+
+        <button
+          onClick={openModal}
+          className="sm:flex hidden text-xs py-3.5 px-10 font-silka font-medium text-white bg-[#192dad] rounded-[50px]"
+        >
+          Add Listing
+        </button>
       </div>
 
       <Transition appear show={isOpen} as={Fragment}>

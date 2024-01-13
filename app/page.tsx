@@ -12,8 +12,7 @@ import Explore from "./components/Explore";
 import Example from "./components/HorizontalScroll";
 import Working from "./components/Working";
 import Product from "./components/Product";
-import Products2 from "./components/Products2";
-import Services from "./components/Services";
+
 
 
 

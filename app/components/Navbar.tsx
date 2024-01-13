@@ -9,6 +9,7 @@ import Link from "next/link";
 import logo from "@/public/top-logo-for-find-an-agency-blackk.png";
 import Image from "next/image";
 import Search from "@/app/components/Search"
+import MyModal from "./Modal";
 function Navbar() {
   const [toggle, setToggle] = useState(true);
   const handleToggle = () => {
@@ -42,9 +43,7 @@ function Navbar() {
                   </ul>
                 </nav>
                 <div className="flex items-center xl:gap-14 gap-5">
-                  <button className="sm:flex hidden text-xs py-3.5 px-10 font-silka font-medium text-white bg-[#192dad] rounded-[50px]">
-                    Add Listing
-                  </button>
+                  <MyModal/>
                   <IconContext.Provider
                     value={{ size: "25px", color: "#192dad" }}
                   >

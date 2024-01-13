@@ -49,17 +49,17 @@ function Hero() {
         </div>
         <div className=""></div>
         <div className="  flex w-full h-full justify-center flex-col items-center ">
-          <h1 className="font-silka font-bold xl:text-[56px] capitalize text-[26px] px-[5%]   text-center xl:leading-[56px] mt-[10%] leading-[32px] z-50">
+          <h1 className="font-silka font-bold xl:text-[56px] capitalize text-[26px] px-[5%]   text-center xl:leading-[56px] mt-[10%] leading-[32px] z-10">
             The most comprehensive listing of <br className="sm:flex hidden" />{" "}
             marketing agencies in Nigeria
           </h1>
-          <p className="text-white silka sm:w-[700px] xl:text-base text-sm px-[5%]  font-medium text-center xl:my-10 my-5  z-50">
+          <p className="text-white silka sm:w-[700px] xl:text-base text-sm px-[5%]  font-medium text-center xl:my-10 my-5  z-10">
             This comprehensive resource serves as a valuable directory for
             businesses seeking specialized marketing services, offering a broad
             spectrum of agencies with varying expertise, ensuring a one-stop
             reference for navigating the dynamic marketing landscape in Nigeria.
           </p>
-          <button className="text-xs py-3.5 px-8 font-silka font-medium text-white bg-[#192dad] rounded-[50px] z-50">
+          <button className="text-xs py-3.5 px-8 font-silka font-medium text-white bg-[#192dad] rounded-[50px] z-10">
             Find Agency
           </button>
         </div>
