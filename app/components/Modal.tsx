@@ -277,6 +277,7 @@ export default function MyModal() {
                         { value: "Abuja", label: "Abuja" },
                         { value: "Ibadan", label: "Ibadan" },
                         { value: "Kano", label: "Kano" },
+                        { value: "Kwara", label: "Kwara" }
                         // Add more options as needed
                       ]}
                       value={
