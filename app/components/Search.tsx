@@ -8,6 +8,7 @@ import axios from "axios";
 
 import { IoClose, IoSearch } from "react-icons/io5";
 import Image from "next/image";
+import SearchResults from "./SearchResults";
 const Search = () => {
   const [input, setInput] = useState("");
   const router = useRouter();
@@ -93,9 +94,9 @@ const handleSearch = async () => {
     setInput("");
   };
   return (
-    <div className="">
+    <div className="flex flex-col">
       <form onSubmit={(e) => searchTask(e)}>
-    <div className="z-[999] border-[1px] border-[#192dad] xl:w-[65vw] w-full h-[45px] rounded-[45px] bg-white flex px-6 justify-between items-center">
+        <div className="z-[999] border-[1px] border-[#192dad] xl:w-[65vw] w-full h-[45px] rounded-[45px] bg-white flex px-6 justify-between items-center">
           <input
             className="w-[100%] h-[100%]  bg-transparent outline-none"
             type="text"
@@ -117,35 +118,7 @@ const handleSearch = async () => {
           </div>
         </div>
       </form>
-
-      {noResult && <p>No results found for {input} </p>}
-
-      {tasks.length > 0 && (
-        <div className="z-[999] xl:w-[65vw] w-full py-2 mt-3 bg-white rounded flex flex-col gap-3 px-6 justify-between ">
-          {tasks.map((task) => (
-            <Link href={`/agency/${task.id}`} key={task.id}>
-              <div className="flex items-center gap-2">
-                <div className="w-[20%]">
-                  <div className="relative w-[100px]  h-[60px]">
-                    <Image
-                      src={task.logoURL}
-                      alt="logo"
-                     fill={true}
-                     objectFit="contain"
-                    />
-                  </div>
-                </div>
-                <div className="w-[80%]">
-                  <h5 className="text-sm text-blue-700 font-medium font-nunito">
-                    {task.name}
-                  </h5>
-                  <p className="text-sm -mt-1">{task.about}</p>
-                </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-      )}
+  
     </div>
   );
 };

@@ -10,8 +10,12 @@ import logo from "@/public/top-logo-for-find-an-agency-blackk.png";
 import Image from "next/image";
 import Search from "@/app/components/Search"
 import MyModal from "./Modal";
+import SearchResults from "./SearchResults";
+import Sea from "./Sea";
+import SearchResultItem from "./SearchResults";
 function Navbar() {
   const [toggle, setToggle] = useState(true);
+    const [tasks, setTasks] = useState([]);
   const handleToggle = () => {
     setToggle(!toggle);
   };
@@ -43,7 +47,7 @@ function Navbar() {
                   </ul>
                 </nav>
                 <div className="flex items-center xl:gap-14 gap-5">
-                  <MyModal/>
+                  <MyModal />
                   <IconContext.Provider
                     value={{ size: "25px", color: "#192dad" }}
                   >
@@ -68,7 +72,7 @@ function Navbar() {
                       placeholder="Search a listing"
                     />
                   </div> */}
-                  <Search/>
+               <Sea/>
                   <div className="flex items-center gap-3 sm:gap-14">
                     {/* <button className="text-xs py-3.5 px-8 font-silka font-medium text-white bg-[#192dad] rounded-[50px]">
                       Search
@@ -83,6 +87,7 @@ function Navbar() {
               </div>
             )}
           </div>
+       
         </div>
       </div>
     </div>

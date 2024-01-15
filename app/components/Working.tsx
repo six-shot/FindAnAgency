@@ -6,11 +6,11 @@ export default function Working() {
   return (
     <div>
       <div className="max-w-[1440px] mx-auto mt-48">
-        <div className="grid grid-cols-7 justify-end items-end">
-          <div className="col-span-5 ">
+        <div className="grid sm:grid-cols-7 grid-cols-1 justify-end items-end px-[5%] 2xl:px-0">
+          <div className="sm:col-span-5 ">
             <Image src={working} className="rounded-[20px]" alt="working" />
           </div>
-          <div className="col-span-2 flex justify-end items-start pl-20 flex-col">
+          <div className="sm:col-span-2 flex justify-end items-start sm:pl-20 flex-col">
             <h4 className="font-silka sm:text-[30px] text-[20px] font-bold xl:leading-[36px] leading-[28px]">
               Top 10 Digital Marketing Agencies In Nigeria (2020)
             </h4>
