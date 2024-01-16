@@ -7,9 +7,9 @@ interface SearchResultItemProps {
 
 const SearchResultItem: React.FC<SearchResultItemProps> = ({ name }) => {
   return (
-    <div className="template">
+    <div className="w-full bg-white mt-2">
       <h5>{name}</h5>
-      yes
+    
     </div>
   );
 };

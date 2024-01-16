@@ -2,7 +2,7 @@
 import React, { useState, Dispatch, SetStateAction } from "react";
 import styles from "./style.module.scss";
 import Titles from "../projects/titles/index";
-import Descriptions from "../projects/description/index";
+
 
 
 
@@ -62,13 +62,13 @@ const data = [
     speed: 0.8,
   },
   {
-    title: "Serach Engine Optimization",
+    title: "Search Engine Optimization",
     description:
       "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
     speed: 0.8,
   },
   {
-    title: "website developement",
+    title: "website development",
     description:
       "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
     speed: 0.8,
@@ -86,7 +86,7 @@ const data = [
     speed: 0.8,
   },
   {
-    title: "expiential",
+    title: "experiential",
     description:
       "Explored the Future of Fantasy Football while being in a country where football means a total different sport.",
     speed: 0.8,
@@ -111,7 +111,7 @@ export default function Projects() {
   return (
     <div className='container'>
       <Titles data={data} setSelectedProject={setSelectedProject} />
-      <Descriptions data={data} selectedProject={selectedProject} />
+     
     </div>
   );
 }

@@ -33,7 +33,7 @@ export default function Descriptions({
             }}
           >
             <p>{crop(title, 20)}</p>
-            <p>{description}</p>
+         
           </div>
         );
       })}

@@ -62,7 +62,7 @@ function Title({ data, setSelectedProject }: TitleProps) {
         }}
       >
         <motion.p style={{ clipPath: clip }}>{title}</motion.p>
-        <p>{title}</p>
+        <p className="inline-bl">{title}</p>
       </div>
     </div>
   );

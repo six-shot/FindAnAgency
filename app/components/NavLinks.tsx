@@ -10,9 +10,9 @@ const NavLinks = () => {
     <>
       {links.map((link) => (
         <div className="z-[999]" key={link.id}>
-          <div className=" text-left md:cursor-pointer group  text-xs text-[#2F2F2F]  ">
+          <div className=" text-left md:cursor-pointer group  sm:text-xs text-base text-[#2F2F2F]  ">
             <h1
-              className="py-7  flex justify-between items-center md:pr-0 pr-5 group"
+              className="sm:py-7 flex justify-between items-center md:pr-0 pr-5 group"
               onClick={() => {
                 heading !== link.name ? setHeading(link.name) : setHeading("");
                 setSubHeading("");
@@ -22,8 +22,8 @@ const NavLinks = () => {
             </h1>
             {link.submenu && (
               <div>
-                <div className="absolute top-20 hidden group-hover:md:block hover:md:block">
-                  <div className="bg-white py-2  px-5 w-[250px] ">
+                <div className="absolute top-12  hidden group-hover:md:block hover:md:block">
+                  <div className="bg-white py-4  px-5 w-[250px] ">
                     {link.sublinks.map((mysublinks) => (
                       <div key={mysublinks.id}>
                         {mysublinks.sublink.map((slink) => (
@@ -62,7 +62,7 @@ const NavLinks = () => {
                         ? setSubHeading(slinks.Head)
                         : setSubHeading("")
                     }
-                    className="py-4 pl-7 font-semibold flex justify-between items-center md:pr-0 pr-5"
+                    className=" pl-7 font-semibold md:pr-0 pr-5 font-silka text-base"
                   >
                     {slinks.Head}
                   </h1>
@@ -72,7 +72,7 @@ const NavLinks = () => {
                     }`}
                   >
                     {slinks.sublink.map((slink) => (
-                      <li className="py-3 pl-14" key={slink.id}>
+                      <li className=" pl-14" key={slink.id}>
                         <Link href={slink.link}>{slink.name}</Link>
                       </li>
                     ))}

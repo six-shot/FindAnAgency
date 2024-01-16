@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { FiSearch } from "react-icons/fi";
 import { AiOutlineClose } from "react-icons/ai";
 import { IconContext } from "react-icons/lib";
@@ -10,15 +10,30 @@ import logo from "@/public/top-logo-for-find-an-agency-blackk.png";
 import Image from "next/image";
 import Search from "@/app/components/Search"
 import MyModal from "./Modal";
-import SearchResults from "./SearchResults";
-import Sea from "./Sea";
+import axios from "axios";
 import SearchResultItem from "./SearchResults";
+
 function Navbar() {
   const [toggle, setToggle] = useState(true);
     const [tasks, setTasks] = useState([]);
+     const [searchTerm, setSearchTerm] = useState("");
+     const [data, setData] = useState<Task[]>([]);
+
   const handleToggle = () => {
     setToggle(!toggle);
   };
+  const [navbar,setNavbar] = useState(false)
+  useEffect(() => {
+    const fetchData = async () => {
+      const res = await axios.get(
+        `https://gind-agencies.onrender.com/api/search?q=${searchTerm}`
+      );
+      setData(res?.data?.data);
+    };
+    if (searchTerm) {
+      fetchData();
+    }
+  }, [searchTerm]);
   return (
     <div className="fixed top-[5%] w-full z-50">
       <div className="max-w-[1440px] mx-auto ">
@@ -53,9 +68,29 @@ function Navbar() {
                   >
                     <FiSearch onClick={handleToggle} />
                   </IconContext.Provider>
-                  <IconContext.Provider value={{ size: "25px" }}>
-                    <TbMenu className="sm:hidden flex" />
-                  </IconContext.Provider>
+
+                  <div
+                    className="sm:hidden flex"
+                    onClick={() => setNavbar(!navbar)}
+                  >
+                    {navbar ? (
+                      <TbMenu className="text-black text-[25px]" />
+                    ) : (
+                      <TbMenu className="text-black text-[25px]" />
+                    )}
+                  </div>
+
+                  <div
+                    className={`${
+                      navbar ? "flex" : "hidden"
+                    } p-6 bg-white absolute top-12 right-0  my-2  rounded-xl sm:hidden flex sidebar z-10`}
+                  >
+                    <ul className="list-none flex flex-col ">
+                      <li>Home</li>
+                      <NavLinks />
+                      <li>Blog</li> <li>Contact </li>
+                    </ul>
+                  </div>
                 </div>
               </div>
             ) : (
@@ -72,7 +107,16 @@ function Navbar() {
                       placeholder="Search a listing"
                     />
                   </div> */}
-               <Sea/>
+                  <div className="searchInput_Container">
+                    <input
+                      id="searchInput"
+                      type="text"
+                      placeholder="Search here..."
+                      onChange={(event) => {
+                        setSearchTerm(event.target.value);
+                      }}
+                    />
+                  </div>
                   <div className="flex items-center gap-3 sm:gap-14">
                     {/* <button className="text-xs py-3.5 px-8 font-silka font-medium text-white bg-[#192dad] rounded-[50px]">
                       Search
@@ -87,7 +131,25 @@ function Navbar() {
               </div>
             )}
           </div>
-       
+
+          {searchTerm && (
+            <div className="template_Container">
+              {data
+                .filter((val) => {
+                  if (searchTerm === "") {
+                    return true;
+                  } else if (
+                    val.name.toLowerCase().includes(searchTerm.toLowerCase())
+                  ) {
+                    return true;
+                  }
+                  return false;
+                })
+                .map((val) => {
+                  return <SearchResultItem key={val.id} name={val.name} />;
+                })}
+            </div>
+          )}
         </div>
       </div>
     </div>
