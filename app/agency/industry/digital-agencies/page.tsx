@@ -21,12 +21,14 @@ export default async function TasksPage() {
 
   const content = (
     <section>
-      <br />
+      <h5 className="max-w-[1440px] mx-auto px-5 font-silka mt-[8%] font-bold text-lg uppercase">
+       digital agencies
+      </h5>
       {filteredTasks.map((task) => {
         return (
           <>
             <Link href={`/agency/${task.id}`} key={task.id}>
-              <div className="max-w-[1440px] mx-auto px-5 pb-10">
+              <div className="max-w-[1440px] mx-auto px-5 font-silka">
                 <h2 className="xl:text-[50px] text-[30px] border-b-[1px] border-black text-blue-400 mt-5">
                   {task.data.name}
                 </h2>
@@ -42,7 +44,7 @@ export default async function TasksPage() {
                       <Image
                         src={task.data.logoURL}
                         layout="fill"
-                        objectFit="cover"
+                        objectFit="contain"
                         alt="logo"
                       />
                     </div>
