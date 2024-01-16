@@ -6,12 +6,14 @@ import {
   useTransform,
   useMotionTemplate,
 } from "framer-motion";
+import Link from "next/link";
 
 interface TitleProps {
   data: {
     title: string;
     speed: number;
     i: number;
+    link:string;
   };
   setSelectedProject: (index: number | null) => void;
 }
@@ -39,7 +41,7 @@ export default function Titles({
 }
 
 function Title({ data, setSelectedProject }: TitleProps) {
-  const { title, speed, i } = data;
+  const { title, speed, i,link } = data;
   const container = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -51,19 +53,21 @@ function Title({ data, setSelectedProject }: TitleProps) {
   const clip = useMotionTemplate`inset(0 ${clipProgress}% 0 0)`;
 
   return (
-    <div ref={container} className={styles.title}>
-      <div
-        className={styles.wrapper}
-        onMouseOver={() => {
-          setSelectedProject(i);
-        }}
-        onMouseLeave={() => {
-          setSelectedProject(null);
-        }}
-      >
-        <motion.p style={{ clipPath: clip }}>{title}</motion.p>
-        <p className="inline-bl">{title}</p>
+    <Link href={link} >
+      <div ref={container} className={styles.title}>
+        <div
+          className={styles.wrapper}
+          onMouseOver={() => {
+            setSelectedProject(i);
+          }}
+          onMouseLeave={() => {
+            setSelectedProject(null);
+          }}
+        >
+          <motion.p style={{ clipPath: clip }}>{title}</motion.p>
+          <p className="inline-bl">{title}</p>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }
