@@ -2,11 +2,13 @@ import getAllTasks from "@/libs/getAllTask";
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 
 export const metadata: Metadata = {
-  title: "List of Marketing Agencies in lagos(mainland) ",
+  title: "List of Marketing Agencies in lagos(island) ",
   description: "List of Marketing Agencies in lagos(island)",
 };
+
 export default async function TasksPage() {
   const tasksData: Promise<Task[]> = getAllTasks();
 
@@ -17,12 +19,14 @@ export default async function TasksPage() {
 
   const content = (
     <section>
-      <br />
+      <h5 className="max-w-[1440px] mx-auto px-5 font-silka mt-[8%] font-bold text-lg uppercase">
+        Agencies in lagos mainland
+      </h5>
       {filteredTasks.map((task) => {
         return (
           <>
             <Link href={`/agency/${task.id}`} key={task.id}>
-              <div className="max-w-[1440px] mx-auto px-5 pb-10">
+              <div className="max-w-[1440px] mx-auto px-5 font-silka">
                 <h2 className="xl:text-[50px] text-[30px] border-b-[1px] border-black text-blue-400 mt-5">
                   {task.data.name}
                 </h2>
@@ -38,7 +42,7 @@ export default async function TasksPage() {
                       <Image
                         src={task.data.logoURL}
                         layout="fill"
-                        objectFit="cover"
+                        objectFit="contain"
                         alt="logo"
                       />
                     </div>
