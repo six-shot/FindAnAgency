@@ -23,7 +23,7 @@ export default async function page({ params: { service } }: Params) {
     return taskServices.includes(decodedService.toLowerCase());
   });
   return (
-    <div className="max-w-[1440px] mx-auto   px-[6%] 2xl:px-0 pb-10">
+    <div className="max-w-[1440px] mx-auto   px-[6%] 2xl:px-0 py-20">
       <h3 className="text-[30px] pt-20 font-bold font-nunito">{cleanedService}</h3>
     
       <div>Business Name</div>  {filteredTasks.length > 0 && (
@@ -44,7 +44,7 @@ export default async function page({ params: { service } }: Params) {
                       <Image
                         src={task.data.logoURL}
                         layout="fill"
-                        objectFit="cover"
+                        objectFit="contain"
                         alt="logo"
                       />
                     </div>

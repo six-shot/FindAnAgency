@@ -22,7 +22,7 @@ export default async function TasksPage() {
   );
 
   const content = (
-    <section className="max-w-[1440px] mx-auto   px-[6%] 2xl:px-0 pb-10">
+    <section className="max-w-[1440px] mx-auto   px-[6%] 2xl:px-0 py-20">
       <div className="my-20">
         {allServices.map((service, index) => (
           <Link key={index} href={`/${service}`}>
