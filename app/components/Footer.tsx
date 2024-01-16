@@ -31,7 +31,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="pt-20">
-          <ul>© 2023 Find An Agency.</ul>
+          <ul>© 2024 Find An Agency.</ul>
         </div>
       </div>
     </div>

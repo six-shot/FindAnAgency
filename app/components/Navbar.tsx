@@ -69,7 +69,9 @@ function Navbar() {
                 </div>
                 <nav>
                   <ul className="sm:flex items-center hidden text-xs text-[#2F2F2F] font-silka gap-12  font-semibold">
-                    <li>Home</li>
+                    <li>
+                      <Link href="/">Home</Link>
+                    </li>
                     <NavLinks />
                     <li>Blog</li> <li>Contact </li>
                   </ul>
@@ -130,7 +132,7 @@ function Navbar() {
                         setSearchTerm(event.target.value);
                       }}
                     />
-                    {loading &&   <span className="loader pr-5"></span>}
+                    {loading && <span className="loader pr-5"></span>}
                   </div>
                   <div className="flex items-center gap-3 sm:gap-14">
                     {/* <button className="text-xs py-3.5 px-8 font-silka font-medium text-white bg-[#192dad] rounded-[50px]">
