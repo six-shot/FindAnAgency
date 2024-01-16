@@ -9,27 +9,27 @@ import Titles from "../projects/titles/index";
 const data = [
   {
     title: "digital marketing agencies",
-    link: "/media",
+    link: "/Digital Marketing Agencies",
     speed: 0.5,
   },
   {
     title: "Content Marketing",
-    link: "/media",
+    link: "/Content Marketing",
     speed: 0.5,
   },
   {
     title: "Design",
-    link: "/media",
+    link: "/Design",
     speed: 0.67,
   },
   {
     title: "Digital Marketing",
-    link: "/media",
+    link: "/Digital Marketing",
     speed: 0.8,
   },
   {
     title: "email marketing",
-    link: "/media",
+    link: "/Email Marketing",
     speed: 0.8,
   },
   {
@@ -39,52 +39,52 @@ const data = [
   },
   {
     title: "mobile marketing",
-    link: "/media",
+    link: "/Mobile Development",
     speed: 0.8,
   },
   {
     title: "Online reputation marketing",
-    link: "/media",
+    link: "/Online Reputation Management",
     speed: 0.8,
   },
   {
     title: "pay per click marketing",
-    link: "/media",
+    link: "/Pay per Click Marketing",
     speed: 0.8,
   },
   {
     title: "Search Engine Optimization",
-    link: "/media",
+    link: "/Search Engine Optimization",
     speed: 0.8,
   },
   {
     title: "website development",
-    link: "/media",
+    link: "/Website Development",
     speed: 0.8,
   },
   {
     title: "traditional services",
-    link: "/media",
+    link: "/Traditional Services",
     speed: 0.8,
   },
   {
     title: "boutique",
-    link: "/media",
+    link: "/Boutique",
     speed: 0.8,
   },
   {
     title: "experiential",
-    link: "/media",
+    link: "/Experiential",
     speed: 0.8,
   },
   {
     title: "media",
-    link: "/media",
+    link: "/Media",
     speed: 0.8,
   },
   {
     title: "public relation(pr)",
-    link: "/media",
+    link: "/Public Relations(PR)",
     speed: 0.8,
   },
 ];
