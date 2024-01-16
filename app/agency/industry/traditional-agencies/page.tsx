@@ -20,7 +20,7 @@ export default async function TasksPage() {
   const content = (
     <section>
       <h5 className="max-w-[1440px] mx-auto px-5 font-silka mt-[8%] font-bold text-lg uppercase">
-  Traditional Agnecies
+  Traditional Agencies
       </h5>
       {filteredTasks.map((task) => {
         return (
