@@ -42,6 +42,10 @@ function Navbar() {
      fetchData();
    }
  }, [searchTerm]);
+  const handleSearchResultClick = () => {
+    setSearchTerm(""); // Reset searchTerm when a result item is clicked
+    setToggle(true); // Close the search results (if desired)
+  };
 
   return (
     <div className="fixed top-[5%] w-full z-50">
@@ -164,6 +168,7 @@ function Navbar() {
                       about={val.about}
                       logoURL={val.logoURL}
                       id={val.id}
+                      onClick={handleSearchResultClick} // Pass the callback function
                     />
                   );
                 })}
