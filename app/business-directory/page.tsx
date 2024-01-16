@@ -22,8 +22,10 @@ export default async function TasksPage() {
   );
 
   const content = (
-    <section className="max-w-[1440px] mx-auto   px-[6%] 2xl:px-0 py-20">
+    <section className="max-w-[1440px] mx-auto font-silka  px-[6%] 2xl:px-0 py-20">
+
       <div className="my-20">
+        <h5 className="text-xl font-bold uppercase mb-3">All Business Directories</h5>
         {allServices.map((service, index) => (
           <Link key={index} href={`/${service}`}>
             <h5>{`${service}: (${filteredCounts[index].length})`}</h5>
