@@ -34,8 +34,8 @@ export default function MyModal() {
       { value: "Mobile Development", label: "Mobile Development" },
       { value: "Mobile Marketing", label: "Mobile Marketing" },
       {
-        value: "Online Reputation Managemnet",
-        label: "Online Reputation Managemnet",
+        value: "Online Reputation management",
+        label: "Online Reputation management",
       },
       { value: "Pay per Click Marketing", label: "Pay per Click Marketing" },
       {
@@ -125,7 +125,6 @@ export default function MyModal() {
           logo: null,
         });
 
-       
         toast.success("Listing Pending!");
       } else {
         console.error("Failed to create listing.");
@@ -141,7 +140,6 @@ export default function MyModal() {
     <>
       <ToastContainer />
       <div className="">
-
         <button
           onClick={openModal}
           className="sm:flex hidden text-xs py-3.5 px-10 font-silka font-medium text-white bg-[#192dad] rounded-[50px]"
@@ -277,7 +275,7 @@ export default function MyModal() {
                         { value: "Abuja", label: "Abuja" },
                         { value: "Ibadan", label: "Ibadan" },
                         { value: "Kano", label: "Kano" },
-                        { value: "Kwara", label: "Kwara" }
+                        { value: "Kwara", label: "Kwara" },
                         // Add more options as needed
                       ]}
                       value={

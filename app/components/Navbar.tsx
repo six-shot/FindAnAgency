@@ -23,30 +23,33 @@ function Navbar() {
     setToggle(!toggle);
   };
   const [navbar, setNavbar] = useState(false);
- useEffect(() => {
-   const fetchData = async () => {
-     try {
-       setLoading(true); // Set loading to true before making the request
-       const res = await axios.get(
-         `https://gind-agencies.onrender.com/api/search?q=${searchTerm}`
-       );
-       setData(res?.data?.data);
-     } catch (error) {
-       console.error("Error fetching data:", error);
-     } finally {
-       setLoading(false); // Set loading to false after the request is completed
-     }
-   };
-
-   if (searchTerm) {
-     fetchData();
+ const handleSearch = async () => {
+   try {
+     setLoading(true);
+     const res = await axios.get(
+       `https://gind-agencies.onrender.com/api/search?q=${searchTerm}`
+     );
+     setData(res?.data?.data || []);
+   } catch (error) {
+     console.error("Error fetching data:", error);
+   } finally {
+     setLoading(false);
    }
- }, [searchTerm]);
+ };
+
+  const handleSearchInputChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setSearchTerm(event.target.value);
+  };
+ const handleSearchButtonClick = () => {
+   handleSearch();
+   setToggle(true);
+ };
   const handleSearchResultClick = () => {
     setSearchTerm(""); // Reset searchTerm when a result item is clicked
     setToggle(true); // Close the search results (if desired)
   };
-
   return (
     <div className="fixed top-[5%] w-full z-50">
       <div className="max-w-[1440px] mx-auto ">
@@ -132,7 +135,16 @@ function Navbar() {
                         setSearchTerm(event.target.value);
                       }}
                     />
-                    {loading && <span className="loader pr-5"></span>}
+                    {loading ? (
+                      <span className="loader pr-5"></span>
+                    ) : (
+                      <button
+                        className="text-xs py-3.5 px-8 font-silka font-medium text-white bg-[#192dad] rounded-[50px]"
+                        onClick={handleSearchButtonClick}
+                      >
+                        Search
+                      </button>
+                    )}
                   </div>
                   <div className="flex items-center gap-3 sm:gap-14">
                     {/* <button className="text-xs py-3.5 px-8 font-silka font-medium text-white bg-[#192dad] rounded-[50px]">
